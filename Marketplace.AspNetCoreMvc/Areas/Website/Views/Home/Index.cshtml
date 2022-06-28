@@ -1,0 +1,1919 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+<!-- HERO SLIDER -->
+<section id="slider">
+    <div class="container">
+        <div class="hero-slider">
+            <!-- SLIDER TABLARI -->
+            <ul class="nav nav-pills justify-content-center" id="slider-tablar" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="kampanya-tab" data-toggle="pill" href="#kampanya" role="tab"
+                       aria-controls="kampanya" aria-selected="true">@Localizer["Test"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="secilmisler-tab" data-toggle="pill" href="#secilmisler" role="tab"
+                       aria-controls="secilmisler" aria-selected="false">Seçilmişler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="en-iyi-fiyat-tab" data-toggle="pill" href="#en-iyi-fiyat" role="tab"
+                       aria-controls="en-iyi-fiyat" aria-selected="false">En İyi Fiyat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="hemen-kargo-tab" data-toggle="pill" href="#hemen-kargo" role="tab"
+                       aria-controls="hemen-kargo" aria-selected="false">Hemen Kargo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="markalar-tab" data-toggle="pill" href="#markalar" role="tab"
+                       aria-controls="markalar" aria-selected="false">Markalar</a>
+                </li>
+            </ul>
+            <!-- SLIDER ICERIK -->
+            <div class="tab-content" id="sliderTabIcerik">
+                <!-- KAMPANYALAR SLIDER -->
+                <div class="tab-pane fade show active" id="kampanya" role="tabpanel" aria-labelledby="kampanya-tab">
+                    <div class="tab-slide">
+                        <!-- SLIDER GORSEL ALAN -->
+                        <div class="slider-1">
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Bilgisayarlarda kampanya
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-1.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Apple ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                benzersiz kampanya fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-2.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Anne bebek ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                kaçırılmayacak bahar fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-3.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-3.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Evinin ustalarına yapı market ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-4.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-4.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                500 TL ve üzeri alışverişlerinizde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                ücretsiz teslimat imkanları
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-5.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-5.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SLIDER GORSEL ALAN SONU -->
+                        <!-- SLIDER THUMBNAILLER -->
+                        <div class="slider-nav-1 slider-nav">
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-1.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-2.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-3.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-4.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-5.jpg" draggable="false" />
+                            </div>
+                        </div>
+                        <!-- SLIDER THUMBNAILLER SONU -->
+                    </div>
+                </div>
+                <!-- KAMPANYALAR SLIDER SONU -->
+                <!-- SECILMISLER SLIDER -->
+                <div class="tab-pane fade" id="secilmisler" role="tabpanel" aria-labelledby="secilmisler-tab">
+                    <div class="tab-slide">
+                        <!-- SLIDER GORSEL ALAN -->
+                        <div class="slider-2">
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Bilgisayarlarda kampanya
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-1.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Apple ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                benzersiz kampanya fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-2.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Anne bebek ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                kaçırılmayacak bahar fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-3.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-3.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Evinin ustalarına yapı market ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-4.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-4.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                500 TL ve üzeri alışverişlerinizde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                ücretsiz teslimat imkanları
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-5.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-5.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SLIDER GORSEL ALAN SONU -->
+                        <!-- SLIDER THUMBNAILLER -->
+                        <div class="slider-nav-2 slider-nav">
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-1.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-2.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-3.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-4.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-5.jpg" draggable="false" />
+                            </div>
+                        </div>
+                        <!-- SLIDER THUMBNAILLER SONU -->
+                    </div>
+                </div>
+                <!-- SECILMISLER SLIDER -->
+                <div class="tab-pane fade" id="en-iyi-fiyat" role="tabpanel" aria-labelledby="en-iyi-fiyat-tab">
+                    <div class="tab-slide">
+                        <!-- SLIDER GORSEL ALAN -->
+                        <div class="slider-3">
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Bilgisayarlarda kampanya
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-1.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Apple ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                benzersiz kampanya fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-2.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Anne bebek ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                kaçırılmayacak bahar fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-3.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-3.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Evinin ustalarına yapı market ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-4.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-4.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                500 TL ve üzeri alışverişlerinizde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                ücretsiz teslimat imkanları
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-5.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-5.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SLIDER GORSEL ALAN SONU -->
+                        <!-- SLIDER THUMBNAILLER -->
+                        <div class="slider-nav-3 slider-nav">
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-1.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-2.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-3.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-4.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-5.jpg" draggable="false" />
+                            </div>
+                        </div>
+                        <!-- SLIDER THUMBNAILLER SONU -->
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="hemen-kargo" role="tabpanel" aria-labelledby="hemen-kargo-tab">
+                    <div class="tab-slide">
+                        <!-- SLIDER GORSEL ALAN -->
+                        <div class="slider-4">
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Bilgisayarlarda kampanya
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-1.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Apple ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                benzersiz kampanya fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-2.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Anne bebek ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                kaçırılmayacak bahar fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-3.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-3.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Evinin ustalarına yapı market ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-4.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-4.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                500 TL ve üzeri alışverişlerinizde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                ücretsiz teslimat imkanları
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-5.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-5.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SLIDER GORSEL ALAN SONU -->
+                        <!-- SLIDER THUMBNAILLER -->
+                        <div class="slider-nav-4 slider-nav">
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-1.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-2.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-3.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-4.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-5.jpg" draggable="false" />
+                            </div>
+                        </div>
+                        <!-- SLIDER THUMBNAILLER SONU -->
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="markalar" role="tabpanel" aria-labelledby="markalar-tab">
+                    <div class="tab-slide">
+                        <!-- SLIDER GORSEL ALAN -->
+                        <div class="slider-5">
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Bilgisayarlarda kampanya
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-1.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Apple ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                benzersiz kampanya fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-2.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Anne bebek ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                kaçırılmayacak bahar fırsatları.
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-3.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-3.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                Evinin ustalarına yapı market ürünlerinde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                %50’ye varan fiyat avantajlarıyla
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-4.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-4.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-sol-panel">
+                                        <div class="slide-sol-panel__yazi">
+                                            <div class="slide-sol-panel__yazi-baslik">
+                                                500 TL ve üzeri alışverişlerinizde
+                                            </div>
+                                            <div class="slide-sol-panel__yazi-metin">
+                                                ücretsiz teslimat imkanları
+                                            </div>
+                                            <a href="#" class="btn btn-white slider-button mt-auto">Göster</a>
+                                        </div>
+                                        <div class="slide-sol-panel__gorsel">
+                                            <a href="#">
+                                                <img src="~/assets/media/img/website/slider/slider-5.jpg" draggable="false" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-sag-panel" style="background-color: aqua;">
+                                        <a href="#">
+                                            <img src="~/assets/media/img/website/slider/inf-5.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SLIDER GORSEL ALAN SONU -->
+                        <!-- SLIDER THUMBNAILLER -->
+                        <div class="slider-nav-5 slider-nav">
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-1.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-2.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-3.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-4.jpg" draggable="false" />
+                            </div>
+                            <div class="item">
+                                <img src="~/assets/media/img/website/slider/slider-thumb-5.jpg" draggable="false" />
+                            </div>
+                        </div>
+                        <!-- SLIDER THUMBNAILLER SONU -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MOBIL ICERIK -->
+        <div class="mobil-search-bar">
+            <div class="navigation-search">
+                <form class="navigation-inline-form">
+                    <input class="navigation-input" type="search" name="search" placeholder="Ürün aramaya başla...">
+                    <button type="submit" class="navigation-btn">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="mobil-hero-slider">
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-1.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-2.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-3.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-4.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-5.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-1.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-2.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-3.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-4.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="mobil-slide">
+                <a href="#">
+                    <img src="~/assets/media/img/website/slider/mobil-5.jpg" class="img-fluid">
+                </a>
+            </div>
+        </div>
+        <!-- MOBIL ICERIK SONU -->
+    </div>
+</section>
+<!-- HERO SLIDER SONU -->
+<!-- INFLUENCERLARIMIZ -->
+<section class="influencer-thumbs">
+    <div class="suppoer-area pt-70 pb-60 hm9-section-padding">
+        <div class="container padding-10-row-col">
+            <div class="section-title text-center mb-3">
+                <h2>Bu gün ne aldılar?</h2>
+            </div>
+            <div class="influencer-card-slider row">
+                <div class="col">
+                    <div class="card influencer-card">
+                        <div class="row no-gutters">
+                            <div class="col-4 relative">
+                                <img src="~/assets/media/img/website/influencers/female-1.jpg" class="card-img" alt="">
+                                <a href="#jane_doe" class="badge badge-success inf-badge shadow-sm">#jane_doe</a>
+                            </div>
+                            <div class="col-8 d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="stretched-link">Vetel Asteo i5</a>
+                                    </h4>
+                                    <div class="card-text">Laptop</div>
+                                    <div class="card-text">
+                                        <small class="text-muted"><del>4.999 TL</del></small>
+                                    </div>
+                                    <div class="lead text-danger">3.999TL</div>
+                                </div>
+                                <div class="inf-urun-resim">
+                                    <img src="https://dummyimage.com/600x800" class="img-fluid border">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card influencer-card">
+                        <div class="row no-gutters">
+                            <div class="col-4 relative">
+                                <img src="~/assets/media/img/website/influencers/male-2.jpg" class="card-img" alt="">
+                                <a href="#jane_doe" class="badge badge-success inf-badge shadow-sm">#michael7898</a>
+                            </div>
+                            <div class="col-8 d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="stretched-link">
+                                            Sansita Bej Payetli
+                                            Bluz
+                                        </a>
+                                    </h4>
+                                    <div class="card-text">Moda</div>
+                                    <div class="card-text"><small class="text-muted"><del>399TL</del></small></div>
+                                    <div class="lead text-danger">149</div>
+                                </div>
+                                <div class="inf-urun-resim">
+                                    <img src="https://dummyimage.com/600x800" class="img-fluid border">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card influencer-card">
+                        <div class="row no-gutters">
+                            <div class="col-4 relative">
+                                <img src="~/assets/media/img/website/influencers/female-2.jpg" class="card-img" alt="">
+                                <a href="#jane_doe"
+                                   class="badge badge-success inf-badge shadow-sm">#carmilla@love</a>
+                            </div>
+                            <div class="col-8 d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="stretched-link">
+                                            Manibonne %99 Sun
+                                            Screen
+                                        </a>
+                                    </h4>
+                                    <div class="card-text">Güneş Kremi</div>
+                                    <div class="card-text"><small class="text-muted"><del>99TL</del></small></div>
+                                    <div class="lead text-danger">79TL</div>
+                                </div>
+                                <div class="inf-urun-resim">
+                                    <img src="https://dummyimage.com/600x800" class="img-fluid border">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card influencer-card">
+                        <div class="row no-gutters">
+                            <div class="col-4 relative">
+                                <img src="~/assets/media/img/website/influencers/male-4.jpg" class="card-img" alt="">
+                                <a href="#jane_doe" class="badge badge-success inf-badge shadow-sm">#joey_k</a>
+                            </div>
+                            <div class="col-8 d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="#" class="stretched-link">iPhone 11 XL</a></h4>
+                                    <div class="card-text">Akıllı Telefon</div>
+                                    <div class="card-text">
+                                        <small class="text-muted"><del>9.999 TL</del></small>
+                                    </div>
+                                    <div class="lead text-danger">7.999TL</div>
+                                </div>
+                                <div class="inf-urun-resim">
+                                    <img src="https://dummyimage.com/600x800" class="img-fluid border">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card influencer-card">
+                        <div class="row no-gutters">
+                            <div class="col-4 relative">
+                                <img src="~/assets/media/img/website/influencers/female-4.jpg" class="card-img" alt="">
+                                <a href="#jane_doe" class="badge badge-success inf-badge shadow-sm">#jane_doe</a>
+                            </div>
+                            <div class="col-8 d-flex justify-content-center align-items-center">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#" class="stretched-link">Vetel Asteo i5</a>
+                                    </h4>
+                                    <div class="card-text">Laptop</div>
+                                    <div class="card-text">
+                                        <small class="text-muted"><del>4.999 TL</del></small>
+                                    </div>
+                                    <div class="lead text-danger">3.999TL</div>
+                                </div>
+                                <div class="inf-urun-resim">
+                                    <img src="https://dummyimage.com/600x800" class="img-fluid border">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="view-more text-center mt-20 toggle-btn5 col-12">
+                <a class="loadMore5" href="#">TÜMÜNÜ GÖSTER &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- INFLUENCERLARIMIZ SONU -->
+<!-- KAMPANYA GÖRSELLERİ - B6 -->
+<section class="kampanya-gorselleri pt-100 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col kampanya-card">
+                <a href="#">
+                    <img src="~/assets/media/img/website/urun/kampanya-1.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="col kampanya-card">
+                <a href="#">
+                    <img src="~/assets/media/img/website/urun/kampanya-2.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="col kampanya-card">
+                <a href="#">
+                    <img src="~/assets/media/img/website/urun/kampanya-3.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="col kampanya-card">
+                <a href="#">
+                    <img src="~/assets/media/img/website/urun/kampanya-4.jpg" class="img-fluid">
+                </a>
+            </div>
+            <div class="col kampanya-card">
+                <a href="#">
+                    <img src="~/assets/media/img/website/urun/kampanya-5.jpg" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- KAMPANYA GÖRSELLERİ - B6 -->
+<!-- TREND ÜRÜNLER - B7 -->
+<section class="urun-grubu-slider pt-30 pb-60" id="trend-urunler">
+    <div class="container">
+        <div class="product-top-bar section-border mb-5">
+            <div class="section-title-4">
+                <h3 class="bg-white">Trend Ürünler</h3>
+            </div>
+        </div>
+        <div class="row urun-thumbnail-slider">
+
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Davidson Uzun Kordonlu Kırmızı Çim Biçme Makinesi
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-1.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15.90 TL</span>
+                        <span class="fiyat">8.45 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%25</div>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">4.999 TL</span>
+                        <span class="fiyat">3.699 TL</span>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Adidas Sport Beyaz Spor Ayakkabı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-4.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal"></span>
+                        <span class="fiyat">599 TL</span>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        iPhone 11 Sarı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-5.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">8.499 TL</span>
+                        <span class="fiyat">6.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%15</div>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Sarı Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15 TL</span>
+                        <span class="fiyat">8 TL</span>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%8</div>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- TREND ÜRÜNLER SONU - B7 -->
+<!-- TREND ÜRÜNLER - B7 -->
+<section class="urun-grubu-slider pt-30 pb-60" id="trend-urunler">
+    <div class="container">
+        <div class="product-top-bar section-border mb-5">
+            <div class="section-title-4">
+                <h3 class="bg-white">Günün Fırsatları</h3>
+            </div>
+        </div>
+        <div class="row urun-thumbnail-slider">
+
+            <div class="col">
+                <div class="urun-card sepet-urun p-0 h-100 baslangic-karti">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/gunun-firsati-kutu.jpg" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Davidson Uzun Kordonlu Kırmızı Çim Biçme Makinesi
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-1.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15.90 TL</span>
+                        <span class="fiyat">8.45 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%25</div>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">4.999 TL</span>
+                        <span class="fiyat">3.699 TL</span>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Adidas Sport Beyaz Spor Ayakkabı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-4.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal"></span>
+                        <span class="fiyat">599 TL</span>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        iPhone 11 Sarı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-5.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">8.499 TL</span>
+                        <span class="fiyat">6.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%15</div>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Sarı Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15 TL</span>
+                        <span class="fiyat">8 TL</span>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card sepet-urun">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%8</div>
+                    </div>
+                    <button class="btn btn-sepete-ekle">Sepete Ekle<ion-icon></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- TREND ÜRÜNLER SONU - B7 -->
+<!-- ONE CIKANLAR - B8 -->
+<section class="urun-grubu-slider pt-30 pb-60" id="one-cikan-urunler">
+    <div class="container">
+        <div class="product-top-bar section-border mb-5">
+            <div class="section-title-4">
+                <h3 class="bg-white">Öne Çıkanlar</h3>
+            </div>
+        </div>
+        <div class="row urun-thumbnail-slider">
+
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Davidson Uzun Kordonlu Kırmızı Çim Biçme Makinesi
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-1.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15.90 TL</span>
+                        <span class="fiyat">8.45 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%25</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">4.999 TL</span>
+                        <span class="fiyat">3.699 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Adidas Sport Beyaz Spor Ayakkabı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-4.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal"></span>
+                        <span class="fiyat">599 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        iPhone 11 Sarı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-5.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">8.499 TL</span>
+                        <span class="fiyat">6.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%15</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Sarı Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15 TL</span>
+                        <span class="fiyat">8 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%8</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ONE CIKANLAR - B8 -->
+<!-- ONE CIKANLAR - B8 -->
+<section class="urun-grubu-slider pt-30 pb-60" id="one-cikan-urunler">
+    <div class="container">
+        <div class="product-top-bar section-border mb-5">
+            <div class="section-title-4">
+                <h3 class="bg-white">Son Gezdiğiniz Ürünler</h3>
+            </div>
+        </div>
+        <div class="row urun-thumbnail-slider">
+
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Davidson Uzun Kordonlu Kırmızı Çim Biçme Makinesi
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-1.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15.90 TL</span>
+                        <span class="fiyat">8.45 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%25</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">4.999 TL</span>
+                        <span class="fiyat">3.699 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Adidas Sport Beyaz Spor Ayakkabı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-4.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal"></span>
+                        <span class="fiyat">599 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        iPhone 11 Sarı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-5.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">8.499 TL</span>
+                        <span class="fiyat">6.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%15</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Sarı Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15 TL</span>
+                        <span class="fiyat">8 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%8</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ONE CIKANLAR - B8 -->
+<!-- NEDEN BIZ - B9 -->
+<section class="urun-grubu-slider pt-30 pb-60" id="neden-biz-slider">
+    <div class="container">
+        <div class="product-top-bar section-border mb-5">
+            <div class="section-title-4">
+                <h3 class="bg-white">Neden Biz?</h3>
+            </div>
+        </div>
+        <div class="row neden-biz-slider">
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-1.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            50TL Üzeri Kargo Bedava
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-2.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            Hızlı Teslimat
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-3.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            Sorunsuz İade
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-4.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            Çoklu Kredi Kartıyla Ödeme
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-5.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            Alışveriş Kredisi
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-6.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            Güvenli Alışveriş
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-7.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            7/24 Müşteri Desteği
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-8.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            Aplikasyon ile Alışveriş İmkanı
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-9.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            Online Ödeme
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="neden-biz-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/neden-biz/neden-biz-10.png" class="img-fluid neden-biz-card__img">
+                        <div class="neden-biz-card__text">
+                            Aynı Gün Teslimat
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- NEDEN BIZ SONU - B9 -->
+<!-- DEPARTMANLAR - B10 -->
+<section class="py-5" id="departmanlar">
+    <div class="container">
+        <div class="departmanlar-wrapper tradelab-shadow">
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-between">
+                    <a class="p-2" href="#">Moda</a>
+                    <a class="p-2" href="#">Elektronik</a>
+                    <a class="p-2" href="#">Ev-Yaşam</a>
+                    <a class="p-2" href="#">Ofis</a>
+                    <a class="p-2" href="#">Sport</a>
+                    <a class="p-2" href="#">Kozmetik</a>
+                    <a class="p-2" href="#">Müzik</a>
+                    <a class="p-2" href="#">Oto</a>
+                    <a class="p-2" href="#">Süpermarket</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- DEPARTMANLAR SONU - B10 -->
+<!-- KATEGORİ - GRUPLANDIRMA - B11 -->
+<section id="kategori-grup">
+    <div class="banner-area pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="single-banner mb-30 grup-card tradelab-shadow">
+                        <span class="grup-card-button tradelab-shadow">Git &rarr;</span>
+                        <a href="#"><img src="~/assets/media/img/website/grup/grup-1.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="single-banner mb-30 grup-card tradelab-shadow">
+                        <span class="grup-card-button tradelab-shadow">Git &rarr;</span>
+                        <a href="#"><img src="~/assets/media/img/website/grup/grup-2.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="single-banner mb-30 grup-card tradelab-shadow">
+                        <span class="grup-card-button tradelab-shadow">Git &rarr;</span>
+                        <a href="#"><img src="~/assets/media/img/website/grup/grup-3.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="single-banner mb-30 grup-card tradelab-shadow">
+                        <span class="grup-card-button tradelab-shadow">Git &rarr;</span>
+                        <a href="#"><img src="~/assets/media/img/website/grup/grup-4.jpg" alt=""></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- KATEGORİ - GRUPLANDIRMA SONU - B11 -->
+<!-- ÇOK SATANLAR - B12 -->
+<section class="urun-grubu-slider pt-30 pb-60" id="cok-satanlar">
+    <div class="container">
+        <div class="product-top-bar section-border mb-5">
+            <div class="section-title-4">
+                <h3 class="bg-white">Çok Satanlar</h3>
+            </div>
+        </div>
+        <div class="row urun-thumbnail-slider">
+
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Davidson Uzun Kordonlu Kırmızı Çim Biçme Makinesi
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-1.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15.90 TL</span>
+                        <span class="fiyat">8.45 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%25</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">4.999 TL</span>
+                        <span class="fiyat">3.699 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Adidas Sport Beyaz Spor Ayakkabı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-4.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal"></span>
+                        <span class="fiyat">599 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        iPhone 11 Sarı
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-5.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">8.499 TL</span>
+                        <span class="fiyat">6.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%15</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Kraf Sarı Makas
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-2.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">15 TL</span>
+                        <span class="fiyat">8 TL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="urun-card">
+                    <a href="#" class="urun-card__urunadi">
+                        Acer Astero Dizüstü Bilgisayar - MR1879S2
+                    </a>
+                    <a href="#" class="urun-card__img">
+                        <img src="~/assets/media/img/website/urun/urun-3.jpg" class="img-fluid">
+                    </a>
+                    <div class="urun-card__fiyat">
+                        <span class="fiyat-iptal">3.599 TL</span>
+                        <span class="fiyat">2.999 TL</span>
+                        <div class="indirim-yuzde tradelab-shadow">%8</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- ÇOK SATANLAR - B12 -->
+<!-- INFLUENCERLARIMIZ -->
+<section class="influencer-thumbs">
+    <div class="suppoer-area pt-70 pb-60 hm9-section-padding">
+        <div class="container padding-10-row-col">
+            <div class="section-title text-center mb-3">
+                <h2>Influencerlarımız</h2>
+            </div>
+            <div class="influencer2-card-slider">
+                <div class="influencer2-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/influencers/female-1.jpg" class="img-fluid influencer-card__img">
+                        <div href="#" class="influencer-card__name">Kathleen Wong</div>
+                        <div href="#" class="influencer-card__pos">Makyaj</div>
+                    </a>
+                </div>
+                <div class="influencer2-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/influencers/male-2.jpg" class="img-fluid influencer-card__img">
+                        <div href="#" class="influencer-card__name">Anil Bhaktar</div>
+                        <div href="#" class="influencer-card__pos">Teknoloji</div>
+                    </a>
+                </div>
+                <div class="influencer2-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/influencers/male-1.jpg" class="img-fluid influencer-card__img">
+                        <div href="#" class="influencer-card__name">Andrew Priceg</div>
+                        <div href="#" class="influencer-card__pos">Ses Sistemleri</div>
+                    </a>
+                </div>
+                <div class="influencer2-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/influencers/female-2.jpg" class="img-fluid influencer-card__img">
+                        <div href="#" class="influencer-card__name">Maya Sanders</div>
+                        <div href="#" class="influencer-card__pos">Ev Dekorasyon</div>
+                    </a>
+                </div>
+                <div class="influencer2-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/influencers/male-4.jpg" class="img-fluid influencer-card__img">
+                        <div href="#" class="influencer-card__name">Marco Smith</div>
+                        <div href="#" class="influencer-card__pos">Spor</div>
+                    </a>
+                </div>
+                <div class="influencer2-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/influencers/female-4.jpg" class="img-fluid influencer-card__img">
+                        <div href="#" class="influencer-card__name">Helena Price</div>
+                        <div href="#" class="influencer-card__pos">Giyim</div>
+                    </a>
+                </div>
+                <div class="influencer2-card">
+                    <a href="#">
+                        <img src="~/assets/media/img/website/influencers/male-5.jpg" class="img-fluid influencer-card__img">
+                        <div href="#" class="influencer-card__name">Kenneth O’Dowd</div>
+                        <div href="#" class="influencer-card__pos">Oyun/Konsol</div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="view-more text-center mt-20 toggle-btn5 col-12">
+                <a class="loadMore5" href="#">TÜMÜNÜ GÖSTER &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- INFLUENCERLARIMIZ SONU -->
+<!-- BÜLTEN KAYIT -->
+<section id="bulten-kayit" class="pt-60 pb-60">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-xl-7 col-lg-8 col-md-10">
+                <h3 class="h2 mb-3">Kazançlı fırsatlarımızdan haberdar olun</h3>
+                <form>
+                    <div class="d-sm-flex flex-column flex-sm-row mb-3 justify-content-center">
+                        <input type="email" name="email" class="mr-sm-1 mb-2 mb-sm-0 form-control form-control-lg"
+                               placeholder="E-posta Adresiniz" required>
+
+                        <button type="submit" class="ml-sm-1 btn btn-lg btn-primary">
+                            <span>Kayıt Ol</span>
+                            <ion-icon name="mail-open"></ion-icon>
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="text-small text-white">
+                    E-posta adresinizle bültenimize kayıt olun, fırsatlardan sizleri haberdar edelim.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BÜLTEN KAYIT SONU -->
+@*
+    @section Css{
+        <link href="~/assets/css/pages/test.css" rel="stylesheet" />
+    }
+
+    @section Script{
+        <script src="~/assets/js/pages/test.js"></script>
+    }
+*@

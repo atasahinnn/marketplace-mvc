@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewData["Title"] = "Grouping";
+    Layout = "~/Views/Shared/_SellerLayout.cshtml";
+}
+<form asp-route="/Seller/Product/Grouping" method="post">
+    @Html.AntiForgeryToken()
+    <div class="card card-custom">
+        <div class="d-md-block d-none">
+            <div class="d-flex mx-10 mt-10 justify-content-start flex-row bd-highlight ">
+                <div style="background-color: #E5E7EB " class="pt-4 px-5 mr-3 bd-highlight rounded">
+                    <h3> <a href="#" class="text-dark"> 1 </a>  </h3>
+                </div>
+                <div class="pt-4 mr-2"><h3> <a href="#" class="text-dark">Kategoriler</a>  </h3></div>
+                <div class="my-auto pr-2 pt-2 ">
+                    <span class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)" x="7.5" y="7.5" width="2" height="9" rx="1"></rect>
+                                <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+                <div style="background-color: #C9F7F5 " class="pt-4 px-5 mr-3 bd-highlight rounded">
+                    <h3><a href="#" class="text-dark"> 2 </a>  </h3>
+                </div>
+                <div class="pt-4 mr-2"><h3> <a href="#" class="text-dark">Gruplandirma</a>  </h3></div>
+                <div class="my-auto pr-2 pt-2 ">
+                    <span class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)" x="7.5" y="7.5" width="2" height="9" rx="1"></rect>
+                                <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+                <div style="background-color: #E5E7EB " class="pt-4 px-5 mr-3 bd-highlight rounded">
+                    <h3>  3   </h3>
+                </div>
+                <div class="pt-4"><h3>  Ürün Özellikleri </h3></div>
+            </div>
+            <div class="mx-10 mt-4">
+                <hr />
+            </div>
+        </div>
+        <div class="d-block d-md-none">
+            <div class="row mx-10 mt-10">
+                <div style="background-color: #E5E7EB " class="pt-2 col-2 rounded text-center">
+                    <h3> <a href="#" class="text-dark"> 1 </a>  </h3>
+                </div>
+                <div class="col-10 pt-2"><h3> <a href="#" class="text-dark">Kategoriler</a>  </h3></div>
+            </div>
+            <div class="row mx-10 mt-2">
+                <div style="background-color: #C9F7F5 " class="pt-2 col-2 rounded text-center">
+                    <h3><a href="#" class="text-dark"> 2 </a>  </h3>
+                </div>
+                <div class="col-10 pt-2"><h3> <a href="#" class="text-dark">Gruplandirma</a>  </h3></div>
+            </div>
+            <div class="row mx-10 mt-2">
+                <div style="background-color: #E5E7EB " class="pt-2 col-2 rounded text-center">
+                    <h3>3  </h3>
+                </div>
+                <div class="col-10 pt-2"><h3> Ürün Özellikleri  </h3></div>
+            </div>
+            <div class="mx-10 mt-4">
+                <hr />
+            </div>
+        </div>
+        <div class="card-header flex-wrap border-0">
+            <div class="card-title">
+                <h3 class="card-label">
+                    Gruplandırma
+                </h3>
+            </div>
+        </div>
+        <div class="card-body pt-0">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Gruplandırma yapmak istiyor musunuz?*</label>
+                <div id="myGroup" class="radio-inline col-sm-4 ">
+                    <label class="radio">
+                        <input type="radio" id="gruopStatus" name="gruopStatus" value="true" onclick="ChangeGroupForm()">
+                        <span></span>Evet
+                    </label>
+                    <label class="radio">
+                        <input type="radio" id="gruopStatus" name="gruopStatus" value="false" onclick="ChangeGroupForm()" checked>
+                        <span></span>Hayır
+                    </label>
+                </div>
+            </div>
+            <div id="group1" class="d-none">
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Gruplama Yapılacak Ürün Özelliği</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="groupPropertyId" name="groupPropertyId" onchange="ChangePropertyItemNames()">
+                            @{ foreach (var item in ViewBag.CategoryProperties)
+                                {
+                                    string name = "";
+                                    <option value="@item.Id">
+                                        @for (int i = 0; i < item.PropertyNames.Count; i++)
+                                        {
+                                            if (i != 0)
+                                                name += " - ";
+                                            name += item.PropertyNames[i].Name;
+                                        }
+                                        @name
+                                    </option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Grup İtem Kodu</label>
+                    <div class="col-sm-4">
+                        <input id="groupItemCode" name="groupItemCode" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">İtem İsmi</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="groupPropertyItemId" name="groupPropertyItemId">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="group2">
+                <p>
+                    <strong>Secilen Kategori : </strong> @ViewBag.fullPath
+                </p>
+            </div>
+        </div>
+        <div class="card-footer flex-wrap border-0 pt-0 pb-6 row">
+            <div class="col-12 d-flex justify-content-between ">
+                <div>
+                    <a href="/seller/addproduct" class="btn btn-primary col-md-12 col-md-4 col-md-8">
+                        <span class="svg-icon svg-icon-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24" />
+                                    <circle fill="#000000" cx="9" cy="15" r="6" />
+                                    <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                                </g>
+                            </svg>
+                        </span>Geri
+                    </a>
+                </div>
+                <div>
+                    <!--begin::Button-->
+                    <button type="submit" id="submitButton" class="btn btn-primary col-md-12 col-md-4 col-md-8">
+                        <span class="svg-icon svg-icon-md">
+                            <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24" />
+                                    <circle fill="#000000" cx="9" cy="15" r="6" />
+                                    <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                                </g>
+                            </svg>
+                            <!--end::Svg Icon-->
+                        </span>Devam
+                    </button>
+                    <!--end::Button-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <input class="d-none" id="categoryId" name="categoryId" value="@ViewBag.CategoryId" />
+</form>
+
+@section Javascript{
+    <script src="~/assets/js/pages/seller/grouping.js"></script>
+}

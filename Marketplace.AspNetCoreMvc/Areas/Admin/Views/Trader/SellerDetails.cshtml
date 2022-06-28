@@ -1,0 +1,84 @@
+﻿@model SellerDetailVm
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="alert alert-custom alert-light alert-shadow gutter-b mt-5">
+    <div class="alert-icon">
+        <span class="flaticon2-sheet text-primary icon-xl">
+        </span>
+    </div>
+    <div class="alert-text text-primary">
+        <p>@Localizer["Alert"]</p>
+    </div>
+</div>
+<div class="card p-3 border secondary mt-5">
+    <div class="card-header border-secondary">
+        <h5 class="h4 font-weight-bolder">
+            @Localizer["Baslik"]
+        </h5>
+    </div>
+    <div class="card-body">
+        <div class="overflow-auto">
+            <table class="table table-hover table-bordered mb-2">
+                <thead class="bg-light-dark">
+                    <tr>
+                        <th scope="col" class="text-center">@Localizer["SaticiKodu"]</th>
+                        <th scope="col" class="text-center">@Localizer["MagazaAdi"]</th>
+                        <th scope="col" class="text-center">@Localizer["Lokasyon"]</th>
+                        <th scope="col" class="text-center">@Localizer["Kullanici"]</th>
+                        <th scope="col" class="text-center">@Localizer["HesapTuru"]</th>
+                        <th scope="col" class="text-center">@Localizer["TicaretciTuru"]</th>
+                        <th scope="col" class="text-center">@Localizer["HesapDurumu"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        @if (Model.StoreType == null)
+                        {
+                            <td class="text-center bg-light-warning font-weight-bold">@Model.UserCode</td>
+                        }
+                        else
+                        {
+                            <td class="text-center bg-light-warning font-weight-bold"><a href="/Admin/Trader/StoreDetails?id=@Model.Id">@Model.UserCode</a></td>
+                        }
+                        <td class="text-center">@Model.StoreName</td>
+                        @if (Model.District != null)
+                        {
+                            <td class="text-center">@Model.Country.CountryNames[1].Name / @Model.City.CityNames[1].Name / @Model.District.DistrictNames[1].Name</td>
+                        }
+                        else
+                        {
+                            <td class="text-center">@Model.Country.CountryNames[1].Name / @Model.City.CityNames[1].Name</td>
+                        }
+                        <td class="text-center">@Model.UserName</td>
+                        @if (Model.MembershipPackage.Id == 1)
+                        {
+                            <td class="bg-light-primary font-weight-boldest text-center">@Localizer["Standart"]</td>
+                        }
+                        else
+                        {
+                            <td class="bg-light-warning font-weight-boldest text-center">@Localizer["Premium"]</td>
+                        }
+                        @if (Model.StoreType != null)
+                        {
+                            <td class="text-center">@Localizer[Model.StoreType.StoreTypeNames[1].Name]</td>
+                        }
+                        else
+                        {
+                            <td class="text-center"></td>
+                        }
+                        @if (Model.IsAccountConfirmed == true)
+                        {
+                            <td class="bg-light-success font-weight-boldest text-center">@Localizer["Onayli"]</td>
+                        }
+                        else
+                        {
+                            <td class="bg-light-danger font-weight-boldest text-center">@Localizer["Onaylanmadi"]</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,244 @@
+﻿<!doctype html>
+<html class="no-js" lang="tr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Tradelab</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/assets/css/global/website/style.css" />
+    <script src="~/assets/js/global/website/modernizr-2.8.3.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header class="shadow">
+        <div class="container">
+            <nav id="satici-navigation" class="navigation navigation-justified sticky-top">
+                <div class="navigation-header">
+                    <div class="navigation-logo">
+                        <a href="/Website/Home/Index">
+                            <img src="~/assets/media/img/seller/tradelab-logo.svg" alt="logo">
+                        </a>
+                    </div>
+                    <div class="navigation-button-toggler">
+                        <i class="hamburger-icon"></i>
+                    </div>
+                </div>
+                <div class="navigation-body">
+                    <div class="navigation-body-header">
+                        <a href="/Website/Home/Index">
+                            <img src="~/assets/media/img/seller/tradelab-logo.svg" style="height: 40px;">
+                        </a>
+                        <span class="navigation-body-close-button">&#10005;</span>
+                    </div>
+                    <ul class="navigation-menu">
+
+                        <li class="navigation-item">
+                            <a class="navigation-link" href="#">Satış</a>
+                            <ul class="navigation-dropdown">
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Nasıl Çalışıyor?</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Başlamadan Önce</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Ürün Eklemek</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Pazarlama</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">İlk Satış</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item">
+                            <a class="navigation-link" href="#">Gönderim</a>
+                            <ul class="navigation-dropdown">
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Nasıl Kargolanır?</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item">
+                            <a class="navigation-link" href="#">Fiyatlandırma</a>
+                            <ul class="navigation-dropdown">
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Aylık Mağaza Ücretleri</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Satış Komisyonları</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Pazarlama Ücretleri</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item">
+                            <a class="navigation-link" href="#">Büyüme</a>
+                            <ul class="navigation-dropdown">
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Hesap Sağlığı</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Pazarlama</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Markanızı İnşa Edin</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Global Satış</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item">
+                            <a class="navigation-link" href="#">Öğren</a>
+                            <ul class="navigation-dropdown">
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">SSS</a>
+                                </li>
+                                <li class="navigation-dropdown-item">
+                                    <a class="navigation-dropdown-link" href="#">Tradelab Kaynakları</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <div class="navigation-body-section">
+                        <div class="d-flex flex-column align-items-center">
+                            <small>Tradelab Account</small>
+                            <div>
+                                <a href=@Url.Action("Login", "Account", new { Area = "Seller"}) class="btn btn-sm btn-primary"><i class="fas fa-sign-in-alt"></i> Giriş Yap</a>
+                                <a href=@Url.Action("CurrentLocation", "Account", new { Area = "Seller"}) class="btn btn-sm btn-primary"><i class="fas fa-user-plus"></i> Üye Ol</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="callout">
+                            <h1 class="mb-3"><span class="text-dark">İşletmenizi kaydedin,</span> kurumsal olarak <span class="tradelab-inline">Tradelab</span> mağazası olun.</h1>
+                            <img src="~/assets/media/svg/website/callout-1-bg.svg" class="img-fluid">
+                            <a href="#" class="btn btn-lg btn-outline-warning text-dark shadow" style="border-width: 3px;"><i class="far fa-building"></i> Kurumsal Kayıt</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="callout">
+                            <h1 class="mb-3">Bireysel olarak üye olun, bireysel <span class="tradelab-inline dark">Tradelab</span> satıcısı olun.</h1>
+                            <img src="~/assets/media/svg/website/callout-2-bg.svg" class="img-fluid">
+                            <a href="#" class="btn btn-lg btn-outline-info text-dark shadow" style="border-width: 3px;"><i class="fas fa-user"></i> Bireysel Kayıt</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="suppoer-area pt-100 pb-60 bg-dark text-white">
+            <div class="container">
+                <div class="card-deck">
+                    <div class="card bg-primary shadow p-4">
+                        <div class="card-body satici-card">
+                            <div class="satici-icon shadow">
+                                <img class="img-fluid" src="~/assets/media/svg/website/002-launch.svg">
+                            </div>
+                            <h5 class="text-white checkmark">Üye Olun</h5>
+                            <h5 class="text-white checkmark">Mağazanızı Açın</h5>
+                            <h5 class="text-white checkmark">Ayarlarınızı Yapın</h5>
+                        </div>
+                    </div>
+                    <div class="card bg-primary shadow p-4">
+                        <div class="card-body satici-card">
+                            <div class="satici-icon shadow">
+                                <img class="img-fluid" src="~/assets/media/svg/website/001-delivery-box.svg">
+                            </div>
+
+                            <h5 class="text-white checkmark">Ücretlendirmelerinizi Ayarlayın</h5>
+                            <h5 class="text-white checkmark">Ürünlerinizi Listeleyin</h5>
+                            <h5 class="text-white checkmark">Pazarlama Planınızı Yapın</h5>
+                        </div>
+                    </div>
+                    <div class="card bg-primary shadow p-4">
+                        <div class="card-body satici-card">
+                            <div class="satici-icon shadow">
+                                <img class="img-fluid" src="~/assets/media/svg/website/003-ask.svg">
+                            </div>
+                            <h5 class="text-white checkmark">Müşteriler Sizden Sipariş Versin</h5>
+                            <h5 class="text-white checkmark">Ürünlerinizi Kargolayın</h5>
+                            <h5 class="text-white checkmark">Geribildirim Toplayın</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="p-5 bg-theme text-small" style="background: rgb(196, 196, 196);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-3 text-white">
+                    <img src="~/assets/media/img/seller/tradelab-logo.svg" class=" mb-5" style="width: 120px;">
+                </div>
+                <div class="col-12 col-sm-12 col-md-9 pb-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <h5 class="text-primary strong">TRADELAB MÜŞTERİ</h5>
+                            <ul class="list-unstyled">
+                                <li><a href=@Url.Action("Login", "Account", new { Area = "Seller"})</a></li>
+                                <li><a href=@Url.Action("CurrentLocation", "Account", new { Area = "Seller"})>Kayıt Ol</a></li>
+                                <li><a href="#">Destek</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <h5 class="text-primary strong">TRADELAB SATICI</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Satıcı Portalına Giriş</a></li>
+                                <li><a href="#">Yardım</a></li>
+                                <li><a href="#">Satıcı Forumları</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <h5 class="text-primary">&nbsp;</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">SSS</a></li>
+                                <li><a href="#">Tradelab Kaynakları</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <div class="col-12 text-center text-white">
+                <p>© 2020 Tradelab ®. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JS
+    ============================================ -->
+    <script src="~/assets/js/global/website/jquery-3.5.1.js"></script>
+    <script src="~/assets/js/global/website/bootstrap.bundle.js"></script>
+    <script src="~/assets/js/global/website/plugins.js"></script>
+    <script src="~/assets/js/global/website/main.js"></script>
+    <script src="~/assets/js/global/website/navigation.js"></script>
+    <script src="~/assets/js/global/website/slick.js"></script>
+    <script src="~/assets/js/global/website/jquery.fancybox.js"></script>
+    <script src="~/assets/js/global/website/smooth-scrollbar.js"></script>
+    <script src="~/assets/js/global/website/custom.js"></script>
+
+</body>
+
+</html>

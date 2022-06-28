@@ -1,0 +1,704 @@
+﻿@model ProductDto
+@{
+    ViewData["Title"] = "ProductFeatures";
+    Layout = "~/Views/Shared/_SellerLayout.cshtml";
+}
+
+@section Css{
+    <link href="~/assets/css/pages/seller/product-features.css" rel="stylesheet" type="text/css" />
+}
+
+<form asp-route="/Seller/Product/ProductFeatures" method="post" id="form">
+    <div class="card card-custom">
+        @if (Convert.ToBoolean(ViewBag.GruopStatus) == true)
+        {
+            <div class="d-md-block d-none">
+                <div class="d-flex mx-10 mt-10 justify-content-start flex-row bd-highlight ">
+                    <div style="background-color: #E5E7EB " class="pt-4 px-5 mr-3 bd-highlight rounded">
+                        <h3> <a href="#" class="text-dark"> 1 </a>  </h3>
+                    </div>
+                    <div class="pt-4 mr-2"><h3> <a href="#" class="text-dark">Kategoriler</a>  </h3></div>
+                    <div class="my-auto pr-2 pt-2 ">
+                        <span class="svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)" x="7.5" y="7.5" width="2" height="9" rx="1"></rect>
+                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"></path>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                    <div style="background-color: #E5E7EB " class="pt-4 px-5 mr-3 bd-highlight rounded">
+                        <h3><a href="#" class="text-dark"> 2 </a>  </h3>
+                    </div>
+                    <div class="pt-4 mr-2"><h3> <a href="#" class="text-dark">Gruplandirma</a>  </h3></div>
+                    <div class="my-auto pr-2 pt-2 ">
+                        <span class="svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)" x="7.5" y="7.5" width="2" height="9" rx="1"></rect>
+                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"></path>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                    <div style="background-color: #C9F7F5 " class="pt-4 px-5 mr-3 bd-highlight rounded">
+                        <h3> <a href="#" class="text-dark"> 3 </a>  </h3>
+                    </div>
+                    <div class="pt-4"><h3> <a href="#" class="text-dark"> Ürün Özellikleri </a> </h3></div>
+                </div>
+                <div class="mx-10 mt-4">
+                    <hr />
+                </div>
+            </div>
+            <div class="d-block d-md-none">
+                <div class="row mx-10 mt-10">
+                    <div style="background-color: #E5E7EB " class="pt-2 col-2 rounded text-center">
+                        <h3> <a href="#" class="text-dark"> 1 </a>  </h3>
+                    </div>
+                    <div class="col-10 pt-2"><h3> <a href="#" class="text-dark">Kategoriler</a>  </h3></div>
+                </div>
+                <div class="row mx-10 mt-2">
+                    <div style="background-color: #E5E7EB " class="pt-2 col-2 rounded text-center">
+                        <h3><a href="#" class="text-dark"> 2 </a>  </h3>
+                    </div>
+                    <div class="col-10 pt-2"><h3> <a href="#" class="text-dark">Gruplandirma</a>  </h3></div>
+                </div>
+                <div class="row mx-10 mt-2">
+                    <div style="background-color: #C9F7F5 " class="pt-2 col-2 rounded text-center">
+                        <h3> <a href="#" class="text-dark"> 3 </a>   </h3>
+                    </div>
+                    <div class="col-10 pt-2"><h3> <a href="#" class="text-dark"> Ürün Özellikleri </a> </h3></div>
+                </div>
+                <div class="mx-10 mt-4">
+                    <hr />
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="d-md-block d-none">
+                <div class="d-flex mx-10 mt-10 justify-content-start flex-row bd-highlight ">
+                    <div style="background-color: #E5E7EB " class="pt-4 px-5 mr-3 bd-highlight rounded">
+                        <h3> <a href="#" class="text-dark"> 1 </a>  </h3>
+                    </div>
+                    <div class="pt-4 mr-2"><h3> <a href="#" class="text-dark">Kategoriler</a>  </h3></div>
+                    <div class="my-auto pr-2 pt-2 ">
+                        <span class="svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)" x="7.5" y="7.5" width="2" height="9" rx="1"></rect>
+                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"></path>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                    <div style="background-color: #C9F7F5 " class="pt-4 px-5 mr-3 bd-highlight rounded">
+                        <h3> <a href="#" class="text-dark"> 2 </a>  </h3>
+                    </div>
+                    <div class="pt-4"><h3> <a href="#" class="text-dark"> Ürün Özellikleri </a> </h3></div>
+                </div>
+                <div class="mx-10 mt-4">
+                    <hr />
+                </div>
+            </div>
+            <div class="d-block d-md-none">
+                <div class="row mx-10 mt-10">
+                    <div style="background-color: #E5E7EB " class="pt-2 col-2 rounded text-center">
+                        <h3> <a href="#" class="text-dark"> 1 </a>  </h3>
+                    </div>
+                    <div class="col-10 pt-2"><h3> <a href="#" class="text-dark">Kategoriler</a>  </h3></div>
+                </div>
+                <div class="row mx-10 mt-2">
+                    <div style="background-color: #C9F7F5 " class="pt-2 col-2 rounded text-center">
+                        <h3> <a href="#" class="text-dark"> 2 </a>   </h3>
+                    </div>
+                    <div class="col-10 pt-2"><h3> <a href="#" class="text-dark"> Ürün Özellikleri </a> </h3></div>
+                </div>
+                <div class="mx-10 mt-4">
+                    <hr />
+                </div>
+            </div>
+        }
+        <div class="card-body">
+            <div class="row">
+                <div class="card-header col-12 mb-5 bg-gray-200">
+                    <h3 class="mb-0">
+                        Temel Bilgiler
+                    </h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-12"><b>Kategori :</b>&nbsp; @ViewBag.FullPath</label>
+            </div>
+            @for (Int32 i = 0; i < ViewBag.Languages.Count; i++)
+            {
+                <div class="form-group row">
+                    <div class="col-12 col-md-6">
+                        <label>@ViewBag.Languages[i].Name Ürün Başlık<span class="text-danger">*&nbsp;</span></label>
+                        <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürün sayfasında görünecek @ViewBag.Languages[i].Name ürün başlığını"></i>
+                        <input type="hidden" value="@ViewBag.Languages[i].Id" asp-for="ProductTitles[i].LanguageId" />
+                        <input dir="@ViewBag.Languages[i].Dir" asp-for="ProductTitles[i].Title" type="text" placeholder="@ViewBag.Languages[i].Name Ürün Başlık" class="form-control" />
+                        <span asp-validation-for="ProductTitles[i].Title" class="small text-danger"></span>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label>@ViewBag.Languages[i].Name Ürün Altbaşlık &nbsp;</label>
+                        <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürün sayfasında görünecek @ViewBag.Languages[i].Name ürün altbaşlığını"></i>
+                        <input type="hidden" value="@ViewBag.Languages[i].Id" asp-for="ProductSubtitles[i].LanguageId" />
+                        <input dir="@ViewBag.Languages[i].Dir" asp-for="ProductSubtitles[i].Subtitle" type="text" placeholder="@ViewBag.Languages[i].Name Ürün Altbaşlık" class="form-control" />
+                        <span asp-validation-for="ProductSubtitles[i].Subtitle" class="small text-danger"></span>
+                    </div>
+                </div>
+            }
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <label>Ürün Kodu<span class="text-danger">*&nbsp;</span></label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Sizin tarafınızdan tanımlanan ürün kodu"></i>
+                    <input class="form-control" asp-for="Code" type="text" placeholder="Ürün Kodu">
+                    <span asp-validation-for="Code" class="small text-danger"></span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label>Marka<span class="text-danger">*&nbsp;</span></label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürünün markası"></i>
+                    <select class="form-control" asp-for="BrandId">
+                        <option value="">Seçim Yapınız</option>
+                        @foreach (var item in ViewBag.Brands)
+                        {
+                            var brandName = "";
+                            for (Int32 i = 0; i < item.BrandNames.Count; i++)
+                            {
+                                if (i != 0)
+                                    brandName += " - ";
+                                brandName += item.BrandNames[i].Name;
+                            }
+                            <option value="@item.Id">@brandName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <label>GTIN &nbsp;</label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Elektronik ürünler için gerekli olan GTIN kodu"></i>
+                    <input class="form-control" asp-for="GTIN" type="text" placeholder="GTIN">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label>MPN &nbsp;</label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Elektronik ürünler için gerekli olan MPN kodu"></i>
+                    <input class="form-control" asp-for="MPN" type="text" placeholder="MPN">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <label>Üretim Tarih &nbsp;</label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürünün üretildiği tarih"></i>
+                    <input class="form-control" asp-for="ProductionDate" type="date" placeholder="Üretim Tarihi">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label>Son Kullanma Tarihi &nbsp;</label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Son kullanma tarihi olan ürünler için son kullanma tarihi"></i>
+                    <input class="form-control" asp-for="ExpirationDate" type="date" placeholder="Son Kullanma Tarihi">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <label>Ürün Hazırlanma Süresi<span class="text-danger">*&nbsp;</span></label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürün sipariş verildikten kaç gün sonra kargoya verileceğine dair taahhüt"></i>
+                    <div class="radio-inline">
+                        <label class="radio radio-lg">
+                            <input type="radio" asp-for="PreparationTime" value="1">
+                            <span></span>1 Gün
+                        </label>
+                        <label class="radio radio-lg">
+                            <input type="radio" asp-for="PreparationTime" value="2">
+                            <span></span>2 Gün
+                        </label>
+                        <label class="radio radio-lg">
+                            <input type="radio" asp-for="PreparationTime" value="3">
+                            <span></span>3 Gün
+                        </label>
+                        <label class="radio radio-lg">
+                            <input type="radio" asp-for="PreparationTime" value="4">
+                            <span></span>4 Gün
+                        </label>
+                        <label class="radio radio-lg">
+                            <input type="radio" asp-for="PreparationTime" value="5">
+                            <span></span>5 Gün
+                        </label>
+                        <label class="radio radio-lg">
+                            <input type="radio" asp-for="PreparationTime" value="6">
+                            <span></span>6 Gün
+                        </label>
+                        <label class="radio radio-lg">
+                            <input type="radio" asp-for="PreparationTime" value="7">
+                            <span></span>7+ Gün
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <label>Ürün Durumu&nbsp;</label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürünün yeni veya kullanılmış olduğuna dair bilgi"></i>
+                    <div class="checkbox-inline">
+                        <label class="checkbox checkbox-lg">
+                            <input type="checkbox" asp-for="Status" value="1">
+                            <span></span>Yeni
+                        </label>
+                        @*<label class="checkbox checkbox-lg">
+                                <input type="checkbox" asp-for="Status" value="2">
+                                <span></span>Kullanılmış
+                            </label>*@
+                    </div>
+                    <span class="form-text text-muted">Ürün durumu belirlenecek</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="ql-bg-yellow">
+                        <div class="card-header col-12 mb-5 bg-gray-200">
+                            <h3 class="mb-0">
+                                Ürün Fotoğrafları <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="MAX. 8 ADET FOTOĞRAF YÜKLEYEBİLİRSİNİZ."></i>
+                            </h3>
+                        </div>
+                    <div class="row col-lg-12">
+                        <div class="col-lg-3 border">
+                            <div class="card card-custom gutter-b">
+                                <div class="card-header p-3 justify-content-center" style="min-height: 40px;">
+                                    <div class="card-title m-0">
+                                        <span class="card-label" style="font-size:12px">
+                                            Kapak Fotoğrafı
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card-body p-3">
+                                    <div id="CoverPhoto" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center; background-repeat:no-repeat; width: 100%; height:280px"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg border">
+                            <div class="row draggable-zone">
+                                <div class="col-lg-auto draggable">
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header p-3" style="min-height: 40px;">
+                                            <div class="card-title m-0">
+                                                <h3 class="card-label">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="image-input image-input-outline" id="kt_image_1">
+                                                <div class="image-input-wrapper" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center;"></div>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 47px;" data-original-title="YÜKLE">
+                                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                    <input type="hidden" name="profile_avatar_remove" />
+                                                </label>
+
+                                                <span class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" style="top: -43px;right: 92px;" title="SİL">
+                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                </span>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow draggable-handle" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 0px;" data-original-title="TAŞI">
+                                                    <i class="fas fa-arrows-alt icon-sm text-muted"></i>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto draggable">
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header p-3" style="min-height: 40px;">
+                                            <div class="card-title m-0">
+                                                <h3 class="card-label">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="image-input image-input-outline" id="kt_image_2">
+                                                <div class="image-input-wrapper" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center;"></div>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 47px;" data-original-title="YÜKLE">
+                                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                    <input type="hidden" name="profile_avatar_remove" />
+                                                </label>
+
+                                                <span class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" style="top: -43px;right: 92px;" title="TAŞI">
+                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                </span>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow draggable-handle" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 0px;" data-original-title="SİL">
+                                                    <i class="fas fa-arrows-alt icon-sm text-muted"></i>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto draggable">
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header p-3" style="min-height: 40px;">
+                                            <div class="card-title m-0">
+                                                <h3 class="card-label">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="image-input image-input-outline" id="kt_image_3">
+                                                <div class="image-input-wrapper" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center;"></div>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 47px;" data-original-title="YÜKLE">
+                                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                    <input type="hidden" name="profile_avatar_remove" />
+                                                </label>
+
+                                                <span class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" style="top: -43px;right: 92px;" title="SİL">
+                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                </span>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow draggable-handle" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 0px;" data-original-title="TAŞI">
+                                                    <i class="fas fa-arrows-alt icon-sm text-muted"></i>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto draggable">
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header p-3" style="min-height: 40px;">
+                                            <div class="card-title m-0">
+                                                <h3 class="card-label">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="image-input image-input-outline" id="kt_image_4">
+                                                <div class="image-input-wrapper" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center;"></div>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 47px;" data-original-title="YÜKLE">
+                                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                    <input type="hidden" name="profile_avatar_remove" />
+                                                </label>
+
+                                                <span class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" style="top: -43px;right: 92px;" title="SİL">
+                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                </span>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow draggable-handle" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 0px;" data-original-title="TAŞI">
+                                                    <i class="fas fa-arrows-alt icon-sm text-muted"></i>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto draggable">
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header p-3" style="min-height: 40px;">
+                                            <div class="card-title m-0">
+                                                <h3 class="card-label">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="image-input image-input-outline" id="kt_image_5">
+                                                <div class="image-input-wrapper" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center;"></div>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 47px;" data-original-title="YÜKLE">
+                                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                    <input type="hidden" name="profile_avatar_remove" />
+                                                </label>
+
+                                                <span class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" style="top: -43px;right: 92px;" title="SİL">
+                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                </span>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow draggable-handle" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 0px;" data-original-title="TAŞI">
+                                                    <i class="fas fa-arrows-alt icon-sm text-muted"></i>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto draggable">
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header p-3" style="min-height: 40px;">
+                                            <div class="card-title m-0">
+                                                <h3 class="card-label">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="image-input image-input-outline" id="kt_image_6">
+                                                <div class="image-input-wrapper" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center;"></div>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 47px;" data-original-title="YÜKLE">
+                                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                    <input type="hidden" name="profile_avatar_remove" />
+                                                </label>
+
+                                                <span class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" style="top: -43px;right: 92px;" title="SİL">
+                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                </span>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow draggable-handle" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 0px;" data-original-title="TAŞI">
+                                                    <i class="fas fa-arrows-alt icon-sm text-muted"></i>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto draggable">
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header p-3" style="min-height: 40px;">
+                                            <div class="card-title m-0">
+                                                <h3 class="card-label">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="image-input image-input-outline" id="kt_image_7">
+                                                <div class="image-input-wrapper" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center;"></div>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 47px;" data-original-title="YÜKLE">
+                                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                    <input type="hidden" name="profile_avatar_remove" />
+                                                </label>
+
+                                                <span class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" style="top: -43px;right: 92px;" title="SİL">
+                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                </span>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow draggable-handle" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 0px;" data-original-title="TAŞI">
+                                                    <i class="fas fa-arrows-alt icon-sm text-muted"></i>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto draggable">
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header p-3" style="min-height: 40px;">
+                                            <div class="card-title m-0">
+                                                <h3 class="card-label">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="image-input image-input-outline" id="kt_image_8">
+                                                <div class="image-input-wrapper" style="background-image: url(/assets/media/img/seller/noimage.png); background-size: contain; background-position: center;"></div>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 47px;" data-original-title="YÜKLE">
+                                                    <i class="fa fa-pen icon-sm text-muted"></i>
+                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                    <input type="hidden" name="profile_avatar_remove" />
+                                                </label>
+
+                                                <span class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" style="top: -43px;right: 92px;" title="SİL">
+                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                </span>
+
+                                                <label class="btn btn-xs btn-icon btn-white btn-hover-text-primary btn-shadow draggable-handle" data-action="change" data-toggle="tooltip" title="" style="top: -43px;right: 0px;" data-original-title="TAŞI">
+                                                    <i class="fas fa-arrows-alt icon-sm text-muted"></i>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto pl-0 mt-5">
+                    <label>Stok<span class="text-danger">*&nbsp;</span></label>
+                    <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürünün mevcut stok sayısı"></i>
+                    <div class="form-group">
+                        <input class="form-control" asp-for="Stock" type="number" min="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-header col-12 mb-5 bg-gray-200">
+                    <h3 class="mb-0">
+                        Özellik Ayarları&nbsp;<i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürününün hangi özelliklerinin olduğunu aşağıdaki ilgili kutucuklardan seçiniz"></i>
+                    </h3>
+                </div>
+            </div>
+            <div id="propertyOptions">
+                @for (Int32 i = 0; i < ViewBag.Properties.Count; i++)
+                {
+                    var propertyName = "";
+                    @for (Int32 j = 0; j < ViewBag.Properties[i].PropertyNames.Count; j++)
+                    {
+                        if (j != 0)
+                            propertyName += " - ";
+                        propertyName += ViewBag.Properties[i].PropertyNames[j].Name;
+                    }
+                    <div class="form-group row">
+                        <div class="col-12 col-md-6">
+                            <label>@propertyName</label>
+                            @if (ViewBag.GroupPropertyId == ViewBag.Properties[i].Id)
+                            {
+                                <input class="d-none" asp-for="ProductProperties[i].PropertyId" value="" />
+                                <select class="form-control" asp-for="ProductProperties[i].PropertyItemId" disabled>
+                                    <option value="">Seçim Yapınız</option>
+                                </select>
+                            }
+                            else
+                            {
+                                <input class="d-none" asp-for="ProductProperties[i].PropertyId" value="@ViewBag.Properties[i].Id" />
+                                <select class="form-control select2" asp-for="ProductProperties[i].PropertyItemId" onchange="PropertySelected(this)">
+                                    <option value="">Seçim Yapınız</option>
+                                    @foreach (var item in ViewBag.Properties[i].PropertyItems)
+                                    {
+                                        var propertyItemName = "";
+                                        for (Int32 j = 0; j < item.PropertyItemNames.Count; j++)
+                                        {
+                                            if (j != 0)
+                                                propertyItemName += " - ";
+                                            propertyItemName += item.PropertyItemNames[j].Name;
+                                        }
+                                        <option value="@item.Id">@propertyItemName</option>
+                                    }
+                                </select>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="row">
+                <div class="card-header col-12 mb-5 bg-gray-200">
+                    <h3 class="mb-0">
+                        Ürün Varyasyonları <i class="fas fa-info-circle" data-container="body" data-toggle="tooltip" data-placement="right" title="Ürününün hangi özelliklerle varyasyonunun oluşturulacağını aşağıdaki kutucuklardan seçiniz ve Seçenekleri Oluştur butonuna tıklayınız"></i>
+                    </h3>
+                </div>
+            </div>
+            <div id="propertyVariations">
+                @for (Int32 i = 0; i < ViewBag.Properties.Count; i++)
+                {
+                    var propertyName = "";
+                    @for (Int32 j = 0; j < ViewBag.Properties[i].PropertyNames.Count; j++)
+                    {
+                        if (j != 0)
+                            propertyName += " - ";
+                        propertyName += ViewBag.Properties[i].PropertyNames[j].Name;
+                    }
+                    <div class="form-group row">
+                        <div class="col-12 col-md-6">
+                            @if (ViewBag.GroupPropertyId == ViewBag.Properties[i].Id)
+                            {
+                                <div class="checkbox-inline">
+                                    <label class="checkbox checkbox-lg checkbox-disabled">
+                                        <input type="checkbox" id="property_@i" value="@ViewBag.Properties[i].Id" disabled>
+                                        <span></span> &nbsp; @propertyName
+                                    </label>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="checkbox-inline">
+                                    <label class="checkbox checkbox-lg">
+                                        <input type="checkbox" id="property_@i" value="@ViewBag.Properties[i].Id" onchange="PropertySelectedForVariation(this)">
+                                        <span></span> &nbsp; @propertyName
+                                    </label>
+                                </div>
+                            }
+                            @*<input class="d-none" id="propertyFull_@item.Id" value="@item" />*@
+                        </div>
+                    </div>
+                }
+            </div>
+            <div id="propertyItems" class="form-group row">
+
+            </div>
+            <div id="createVariationButton"></div>
+            
+
+            <div class="row">
+                <div id="createdVariations" class="col-12">
+
+                </div>
+            </div>
+        </div>
+        <div class="card-footer flex-wrap border-0 pt-0 pb-6 row">
+            <div class="col-12 d-flex justify-content-between ">
+                @if (Convert.ToBoolean(ViewBag.GruopStatus) == true)
+                {
+                    <div>
+                        <a href="/seller/productfeatures?isBack=True&isGrouping=True" class="btn btn-primary col-md-12 col-md-4 col-md-8">
+                            <span class="svg-icon svg-icon-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24" />
+                                        <circle fill="#000000" cx="9" cy="15" r="6" />
+                                        <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                                    </g>
+                                </svg>
+                            </span>Geri
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <a href="/seller/addproduct" class="btn btn-primary col-md-12 col-md-4 col-md-8">
+                            <span class="svg-icon svg-icon-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24" />
+                                        <circle fill="#000000" cx="9" cy="15" r="6" />
+                                        <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                                    </g>
+                                </svg>
+                            </span>Geri
+                        </a>
+                    </div>
+                }
+                <div>
+                    <!--begin::Button-->
+                    <button type="submit" id="submitButton" class="btn btn-primary col-md-12 col-md-4 col-md-8">
+                        <span class="svg-icon svg-icon-md">
+                            <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24" />
+                                    <circle fill="#000000" cx="9" cy="15" r="6" />
+                                    <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                                </g>
+                            </svg>
+                            <!--end::Svg Icon-->
+                        </span>Devam
+                    </button>
+                    <!--end::Button-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input class="d-none" asp-for="GroupStatus" value="@ViewBag.GruopStatus" />
+    <input class="d-none" asp-for="GroupItemCode" value="@ViewBag.GroupItemCode" />
+    <input class="d-none" asp-for="GroupPropertyId" value="@ViewBag.GroupPropertyId" />
+    <input class="d-none" asp-for="GroupPropertyItemId" value="@ViewBag.GroupPropertyItemId" />
+</form>
+
+@section Javascript{
+    <script src="~/assets/js/plugins/draggable.bundle.js"></script>
+    <script src="~/assets/js/pages/seller/product-features.js"></script>
+}

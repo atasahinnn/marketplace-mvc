@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "Settings";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="col-md-8 col-lg-9 order-1 order-md-2 mb-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Adınız</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Soyadınız</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>E-Posta</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Cep Telefonu</label>
+                        <input type="tel" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                        <label>Doğum Tarihi</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="form-group inline-radio-input">
+                        <label>Cinsiyet</label>
+                        <div class="d-flex align-items-center">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cinsiyet" id="kadin"
+                                       value="kadin">
+                                <label class="form-check-label" for="kadin">Kadın</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cinsiyet" id="erkek"
+                                       value="erkek">
+                                <label class="form-check-label" for="erkek">Erkek</label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-check inline-radio-input">
+                        <input class="form-check-input" type="checkbox" value="" id="kampanya-eposta">
+                        <label class="form-check-label pl-3" for="kampanya-eposta">
+                            <small>Kampanyalardan e-posta ile haberdar olmak istiyorum.</small>
+                        </label>
+                    </div>
+                    <hr>
+                    <div class="form-check inline-radio-input">
+                        <input class="form-check-input" type="checkbox" value="" id="kampanya-sms">
+                        <label class="form-check-label pl-3" for="kampanya-sms">
+                            <small>Kampanyalardan SMS ile haberdar olmak istiyorum.</small>
+                        </label>
+                    </div>
+                    <hr>
+                    <a href=@Url.Action("ChangePassword", "Account", new { area = "Website"}) class="btn btn-light btn-sm btn-block border"><i class="fas fa-key mr-2"></i> Şifremi değiştirmek istiyorum</a>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-lg btn-primary btn-block"><i class="far fa-save mr-2"></i> Ayarları Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

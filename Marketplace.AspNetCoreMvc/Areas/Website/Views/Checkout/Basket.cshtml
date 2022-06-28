@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewData["Title"] = "Basket";
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row py-3 border-bottom mb-3 align-items-center">
+        <div class="col">
+            <h2>Sepetim</h2>
+        </div>
+    </div>
+    <div class="row mb-2 py-3">
+        <div class="col-md-8 col-lg-9 mb-4">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <h5 class="alert-heading">Uyarı:</h5>
+                <p>Curaprox 5460 Ultra Soft/Ekstra Yumuşak Diş Fırçası isimli üründen dolayı sepetinizde kredi kartı ile taksit yapılamayacaktır</p>
+                <hr>
+                <p class="mb-0"><small><a href="" data-dismiss="alert"><i class="fas fa-close mr-2"></i>Uyarıları Gizle </a></small></p>
+            </div>
+            <div class="card sepet-card shadow-sm">
+                <div class="card-body">
+                    <div class="sepet-card__urun-bilgi mr-md-2">
+                        <div>
+                            <img src="~/assets/media/img/website/siparis-1.jpg" class="img-fluid">
+                        </div>
+                        <div>
+                            <a href="#" class="urun-isim">Mapicut 113 A3 Kollu Kağıt Kesme Makinesi (giyotin)</a>
+                            <p><strong class="text-muted">Satıcı: </strong><a href="#">AnkaTicaret</a></p>
+                            <p><i class="fas fa-clock mr-2 text-warning"></i>Yarın Kargoda</p>
+                            <p>75 TL ve üzeri alışverişlerde kargo bedava!</p>
+                            <div class="btn-group btn-group-sm" role="group">
+                                <a href="#" role="button" class="btn btn-primary text-white">Daha Sonra Al</a>
+                                <a href="#" role="button" class="btn btn-primary text-white">Sil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sepet-card__urun-fiyat">
+                        <div>
+                            <label>ADET</label>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                        <div class="ml-3">
+                            <label>FİYAT</label>
+                            <div class="fiyat text-right">341.00 TL</div>
+                            <div class="kargo-bedava text-right">Kargo Bedava</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card sepet-card shadow-sm">
+                <div class="card-body">
+                    <div class="sepet-card__urun-bilgi mr-md-2">
+                        <div>
+                            <img src="~/assets/media/img/website/siparis-1.jpg" class="img-fluid">
+                        </div>
+                        <div>
+                            <a href="#" class="urun-isim">Mapicut 113 A3 Kollu Kağıt Kesme Makinesi (giyotin)</a>
+                            <p><strong class="text-muted">Satıcı: </strong><a href="#">AnkaTicaret</a></p>
+                            <p><i class="fas fa-clock mr-2 text-warning"></i>Yarın Kargoda</p>
+                            <p>75 TL ve üzeri alışverişlerde kargo bedava!</p>
+                            <div class="btn-group btn-group-sm" role="group">
+                                <a href="#" role="button" class="btn btn-primary text-white">Daha Sonra Al</a>
+                                <a href="#" role="button" class="btn btn-primary text-white">Sil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sepet-card__urun-fiyat">
+                        <div>
+                            <label>ADET</label>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                        <div class="ml-3">
+                            <label>FİYAT</label>
+                            <div class="fiyat text-right">341.00 TL</div>
+                            <div class="kargo-bedava text-right">Kargo Bedava</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="btn btn-sm btn-primary">&larr; Alışverişe Devam Et</a>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+            <div class="card text-right shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title mb-0 text-primary"><strong>Sipariş Özeti</strong></h4>
+                    <p class="card-text mb-1">2 Ürün</p>
+                    <p class="text-muted mb-0"><small>Ödenecek Tutar</small></p>
+                    <p class="h2">80,51 TL</p>
+                    <a href=@Url.Action("Payment","Checkout", new { area = "Website"}) class="btn btn-warning">Alışverişi Tamamla &rarr;</a>
+                </div>
+                <div class="card-body bg-light">
+                    <p class="mb-0"><small>Ürünler Toplamı (KDV Dahil)</small></p>
+                    <p class="h4 text-muted">80,51 TL</p>
+                    <p class="text-muted mb-0"><small><a href="#"><i class="fas fa-info-circle mr-1"></i></a> Kargo Ücreti</small></p>
+                    <p class="text-bold mb-0"><del>9.45 TL</del></p>
+                    <p class="h5">0,00 TL</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#"><small>Çek/Promosyon Kodu Kullan</small></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

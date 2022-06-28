@@ -1,0 +1,193 @@
+﻿@model SellerRegisterDto
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_SellerRegisterLayout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 ml-auto mr-auto">
+            <div class="login-register-wrapper">
+                <div class="login-register-tab-list">
+                    <a class="active" data-toggle="tab" id="registerFormLink" onclick="RegisterFormLoad()">
+                        <h4>@Localizer["KayitOl"]</h4>
+                    </a>
+                    <a data-toggle="tab" id="loginFormLink" onclick="LoginFormLoad()">
+                        <h4>@Localizer["GirisYap"]</h4>
+                    </a>
+                </div>
+                <div class="tab-content">
+                    <div id="registerTab" class="tab-pane active">
+                        <div class="login-form-container">
+                            <div class="login-register-form">
+                                <form asp-area="Seller" asp-controller="Account" asp-action="Register" method="POST" id="registerForm">
+                                    @Html.AntiForgeryToken()
+                                    @if (ViewBag.SelectedCountry.Id == 2) // 2 - TR ID
+                                    {
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input asp-for="FirstName" type="text" class="form-control form-control-lg" placeholder="@Localizer["Ad"]">
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input asp-for="LastName" type="text" class="form-control form-control-lg" placeholder="@Localizer["Soyad"]">
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <select class="form-control form-control-lg" asp-for="CountryId" onload="GetCities(this)">
+                                                    <option value="@ViewBag.SelectedCountry.Id">@ViewBag.SelectedCountry.CountryNames[0].Name - @ViewBag.SelectedCountry.CountryNames[1].Name</option>
+                                                </select>
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="CountryId" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <select class="form-control" asp-for="CityId" onchange="GetDistricts(this)">
+                                                    <option value="">@Localizer["SehirSeciniz"]</option>
+                                                </select>
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="CityId" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <select class="form-control" asp-for="DistrictId">
+                                                    <option value="">@Localizer["IlceSeciniz"]</option>
+                                                </select>
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="DistrictId" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    else // LIBYA
+                                    {
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <input asp-for="FirstName" type="text" class="form-control form-control-lg" placeholder="@Localizer["Ad"]">
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input asp-for="MiddleName" type="text" class="form-control form-control-lg" placeholder="@Localizer["OrtaAd"]">
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="MiddleName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <input asp-for="LastName" type="text" class="form-control form-control-lg" placeholder="@Localizer["Soyad"]">
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="LastName" class="text-danger">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <select class="form-control form-control-lg" asp-for="CountryId" onload="GetCities(this)">
+                                                    <option value="@ViewBag.SelectedCountry.Id">@ViewBag.SelectedCountry.CountryNames[0].Name - @ViewBag.SelectedCountry.CountryNames[1].Name</option>
+                                                </select>
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="CountryId" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <select class="form-control form-control-lg" asp-for="CityId">
+                                                    <option value="">@Localizer["SehirSeciniz"]</option>
+                                                </select>
+                                                <div class="span-margin">
+                                                    <span asp-validation-for="CityId" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    <div class="form-row">
+                                        <input asp-for="Username" type="text" class="form-control form-control-lg" placeholder="@Localizer["KullaniciAdi"]">
+                                        <div class="span-margin">
+                                            <span asp-validation-for="Username" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-3">
+                                            <select class="form-control" asp-for="CountryCallingCodeId">
+                                                <option value="">@Localizer["Kod"]</option>
+                                                @foreach (var country in ViewBag.CountryCodes)
+                                                {
+                                                    <option value="@country.Id">@country.CountryCode&nbsp;@country.CallingCode</option>
+                                                }
+                                            </select>
+                                            <div class="span-margin">
+                                                <span asp-validation-for="CountryCallingCodeId" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-9">
+                                            <input asp-for="Gsm" type="number" class="form-control form-control-lg" placeholder="@Localizer["TelNo"]">
+                                            <div class="span-margin">
+                                                <span asp-validation-for="Gsm" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <input asp-for="Email" type="email" class="form-control form-control-lg" placeholder="@Localizer["Email"]">
+                                        <div class="span-margin">
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="@Localizer["Sifre"]">
+                                        <div class="span-margin">
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <input asp-for="PasswordAgain" type="password" class="form-control form-control-lg" placeholder="@Localizer["SifreTekrari"]">
+                                        <div class="span-margin">
+                                            <span asp-validation-for="PasswordAgain" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-check mb-4">
+                                            <input id="TermsAcceptance" class="form-check-input" type="checkbox" asp-for="TermsAcceptance" onclick="isChecked()">
+                                            <span asp-validation-for="TermsAcceptance" class="text-danger"></span>
+                                            <label class="form-check-label" for="gridCheck">
+                                                @Localizer["HukumVeKosullar"]
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center mb-3">
+                                        <span class="text-danger font-weight-bolder">@TempData["ErrorMessage"]</span>
+                                    </div>
+                                    <div class="form-row">
+                                        <button type="submit" id="registerBtn" class="btn btn-primary btn-lg btn-block" disabled>@Localizer["UyeOl"]</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div id="loginTab" class="tab-pane">
+                        @{await Html.RenderPartialAsync("~/Areas/Seller/Views/Account/LoginPartial.cshtml");}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section JavaScript{
+    <script src="~/assets/js/pages/seller/register.js"></script>
+    <script src="~/assets/js/pages/seller/error-placement.js"></script>
+    @if (ViewBag.IsItAfterLogout)
+    {
+        <script>LoginFormLoad();</script>
+}
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

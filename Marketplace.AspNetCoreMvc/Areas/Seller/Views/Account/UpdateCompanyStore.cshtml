@@ -1,0 +1,310 @@
+﻿@model CompanyStoreDto
+@{
+    ViewData["Title"] = "UpdateCompanyStore";
+    Layout = "~/Views/Shared/_SellerLayout.cshtml";
+}
+<form asp-route="/Seller/Account/UpdateCompanyStore" method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.SellerId)
+    @Html.HiddenFor(x => x.StoreName)
+    @Html.HiddenFor(x => x.LogoPath)
+    @Html.HiddenFor(x => x.TaxNo)
+    @Html.HiddenFor(x => x.CompanyTypeId)
+    @Html.HiddenFor(x => x.ApplicantPositionId)
+    <div class="card p-3 border-secondary">
+        <div class="card-header text-center border-secondary">
+            <h5>
+                @Localizer["Logo"]
+            </h5>
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-12 text-center">
+                    <div class="image-input image-input-outline image-input-circle" id="kt_image_3">
+                        <div class="image-input-wrapper" style="background-image: url('/assets/media/update/@Model.LogoPath')"></div>
+                        <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="@Localizer["LogoEkle"]">
+                            <i class="fa fa-pen icon-sm text-muted"></i>
+                            <input asp-for="LogoFile" type="file" accept=".png, .jpg, .jpeg" />
+                            <input type="hidden" name="profile_avatar_remove" />
+                        </label>
+                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="@Localizer["LogoSil"]">
+                            <i class="ki ki-bold-close icon-xs text-muted"></i>
+                        </span>
+                    </div>
+                    <span class="form-text text-muted">@Localizer["DosyaTurleri"]</span>
+                    <span asp-validation-for="LogoFile" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card p-3 border-secondary mt-5">
+        <div class="card-header text-center border-secondary">
+            <h5>@Localizer["MagazaBilgileriniGuncelle"]</h5>
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>@Localizer["TelNo"]</label>
+                    <input asp-for="Phone" type="number" class="form-control" placeholder="@Localizer["Gsm"]">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>@Localizer["WebAdresi"]</label>
+                    <input asp-for="Website" type="text" class="form-control" placeholder="@Localizer["Web"]">
+                    <span asp-validation-for="Website" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>@Localizer["BasvuranPozisyonu"]</label>
+                    <select class="form-control" asp-for="ApplicantPositionId" disabled>
+                        @foreach (var applicantPosition in ViewBag.ApplicantPositions)
+                        {
+                            string typeName = null;
+                            for (int i = 0; i < applicantPosition.ApplicantPositionNames.Count; i++)
+                            {
+                                if (i != 0)
+                                {
+                                    typeName += applicantPosition.ApplicantPositionNames[i].Name;
+                                }
+                            }
+                            if (applicantPosition.Id == Model.ApplicantPositionId)
+                            {
+                                <option value="@applicantPosition.Id" selected>@typeName</option>
+                            }
+                            else
+                            {
+                                <option value="@applicantPosition.Id">@typeName</option>
+                            }
+                        }
+                    </select>
+                    <span asp-validation-for="ApplicantPositionId" class="small text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>@Localizer["MagazaAdi"]</label>
+                    <input type="text" class="form-control" placeholder="@Model.StoreName @Localizer["Degistirilemez"]" disabled="disabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card p-3 border-secondary mt-5">
+        <div class="card-header text-center border-secondary">
+            <h5>@Localizer["FirmaBilgileri"]</h5>
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>@Localizer["TicaretUnvani"]</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="@Localizer["Unvan"]" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>@Localizer["FirmaTanimi"]I</label>
+                    <input asp-for="CompanyDescription" type="text" class="form-control" placeholder="@Localizer["Tanim"]">
+                    <span asp-validation-for="CompanyDescription" class="small text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>@Localizer["SirketTuru"]</label>
+                    <select class="form-control" asp-for="CompanyTypeId" disabled>
+                        @foreach (var companyType in ViewBag.CompanyTypes)
+                        {
+                            string typeName = null;
+                            for (int i = 0; i < companyType.CompanyTypeNames.Count; i++)
+                            {
+                                if (i != 0)
+                                {
+                                    typeName += companyType.CompanyTypeNames[i].Name;
+                                }
+                            }
+                            if (companyType.Id == Model.CompanyTypeId)
+                            {
+                                <option value="@companyType.Id" selected>@typeName</option>
+                            }
+                            else
+                            {
+                                <option value="@companyType.Id">@typeName</option>
+                            }
+                        }
+                    </select>
+                    <span asp-validation-for="CompanyTypeId" class="small text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>@Localizer["TicaretSicilNumarasi"]</label>
+                    <input asp-for="TradeRegisterNumber" type="text" class="form-control" placeholder="@Localizer["TicaretSicilNumarasi"]" />
+                    <span asp-validation-for="TradeRegisterNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>@Localizer["VergiIl"]</label>
+                    <select class="form-control" asp-for="TaxCityId" onload="GetTaxCities(this)">
+                    </select>
+                    <span asp-validation-for="TaxCityId" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>@Localizer["VergiIlce"]</label>
+                    <input asp-for="TaxDistrict" type="text" class="form-control" placeholder="@Localizer["VergiIlce"]" />
+                    <span asp-validation-for="TaxDistrict" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>@Localizer["VergiNumarasi"]</label>
+                    <input type="text" class="form-control" placeholder="@Model.TaxNo (değiştirilemez)" disabled="disabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card p-3 border-secondary mt-5">
+        <div class="card-header text-center border-secondary">
+            <h5>@Localizer["YetkiliBilgileri"]</h5>
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>@Localizer["Ad"]</label>
+                    <input asp-for="AuthorizedPersonFirstName" type="text" class="form-control" placeholder="@Localizer["YetkiliAd"]" />
+                    <span asp-validation-for="AuthorizedPersonFirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>@Localizer["Soyad"]</label>
+                    <input asp-for="AuthorizedPersonLastName" type="text" class="form-control" placeholder="@Localizer["YetkiliSoyad"]" />
+                    <span asp-validation-for="AuthorizedPersonLastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>@Localizer["Email"]</label>
+                    <input asp-for="AuthorizedPersonEmail" type="text" class="form-control" placeholder="@Localizer["YetkiliEmail"]" />
+                    <span asp-validation-for="AuthorizedPersonEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>@Localizer["Gsm"]</label>
+                    <input asp-for="AuthorizedPersonPhone" type="text" class="form-control" placeholder="@Localizer["YetkiliTelNo"]" />
+                    <span asp-validation-for="AuthorizedPersonPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>@Localizer["KimlikNo"]</label>
+                    <input asp-for="AuthorizedPersonIdentityNumber" type="text" class="form-control" placeholder="@Localizer["YetkiliKimlikNo"]" />
+                    <span asp-validation-for="AuthorizedPersonIdentityNumber" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card p-3 border-secondary mt-5">
+        <div class="card-header text-center border-secondary">
+            <h5>@Localizer["AdresBilgileriniGuncelle"]</h5>
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>@Localizer["Ulke"]</label>
+                    <select class="form-control" asp-for="CountryId" onload="GetCities(this)">
+                        @{string countryName = "";}
+                        @for (int i = 0; i < ViewBag.SelectedCountry.CountryNames.Count; i++)
+                        {
+                            if (i != 0)
+                            {
+                                countryName += " - ";
+                            }
+                            countryName += ViewBag.SelectedCountry.CountryNames[i].Name;
+                        }
+                        <option value="@ViewBag.SelectedCountry.Id">@countryName</option>
+                    </select>
+                    <span asp-validation-for="CityId" class="text-danger"></span>
+                </div>
+                @if (ViewBag.SellerLocation == 2) // TR
+                {
+                    <div class="form-group col-md-4">
+                        <label>@Localizer["Il"]</label>
+                        <select class="form-control" asp-for="CityId" onchange="GetDistricts(this)">
+                        </select>
+                        <span asp-validation-for="CityId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>@Localizer["Ilce"]</label>
+                        <select class="form-control" asp-for="DistrictId">
+                            <option value="">@Localizer["IlceSeciniz"]</option>
+                        </select>
+                        <span asp-validation-for="DistrictId" class="text-danger"></span>
+                    </div>
+                }
+                else // LIBYA
+                {
+                    <div class="form-group col-md-4">
+                        <label>@Localizer["Il"]</label>
+                        <select class="form-control" asp-for="CityId">
+                        </select>
+                        <span asp-validation-for="CityId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>@Localizer["Ilce"]</label>
+                        <input asp-for="DistrictForLibya" type="text" class="form-control" placeholder="@Localizer["LibyaIlce"]" />
+                        <span asp-validation-for="DistrictForLibya" class="text-danger"></span>
+                    </div>
+                }
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>@Localizer["SirketAdresi"]</label>
+                    <textarea asp-for="CompanyAddress" class="form-control" rows="3" placeholder="@Localizer["SirketAdresi"]"></textarea>
+                    <span asp-validation-for="CompanyAddress" class="small text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card p-3 border-secondary mt-5">
+        <div class="card-header text-center border-secondary">
+            <h5>@Localizer["KategoriSecimleri"]</h5>
+        </div>
+        <div class="card-body">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="form-group" id="categoryCheckbox">
+                        <div class="form-control overflow-auto" style="height:350px">
+                            <input class="form-control mt-3 mb-5" type="text" placeholder="@Localizer["KategoriAra"]" id="categoryCheckBoxSearch" />
+                            @for (int i = 0; i < ViewBag.Categories.Count; i++)
+                            {
+                                string categoryText = "";
+                                for (int j = 0; j < ViewBag.Categories[i].CategoryNames.Count; j++)
+                                {
+                                    if (j != 0)
+                                        categoryText += " - ";
+                                    categoryText += ViewBag.Categories[i].CategoryNames[j].Name;
+                                }
+                                <div class="checkbox-inline mt-1">
+                                    <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                        @if (Model.Categories.FirstOrDefault(x => x.Id == ViewBag.Categories[i].Id) != null)
+                                        {
+                                            <input type="checkbox" name="Categories[@i].Id" value="@ViewBag.Categories[i].Id" checked /> <span></span> @categoryText
+                                        }
+                                        else
+                                        {
+                                            <input type="checkbox" name="Categories[@i].Id" value="@ViewBag.Categories[i].Id" /> <span></span> @categoryText
+                                        }
+                                        <input type="hidden" name="Categories[@i].CategoryNames[0]" />
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex float-right mt-5">
+                <button type="submit" class="btn btn-primary">
+                    <i class="flaticon-download-1"></i>&nbsp;&nbsp;@Localizer["MagazaBilgileriniGuncelle"]
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--MODAL END-->
+</form>
+@section JavaScript{
+    <script>var selectedCityId = @Model.CityId;</script>
+    <script>var selectedDistictId = @Model.DistrictId;</script>
+    <script>var selectedTaxCityId = @Model.TaxCityId;</script>
+    <script src="~/assets/js/pages/seller/search.js"></script>
+    <script src="~/assets/js/pages/seller/update-company-store.js"></script>
+    <script src="~/assets/js/global/seller/image-input.js"></script>
+}

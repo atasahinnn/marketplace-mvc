@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "Returns";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="col-md-8 col-lg-9 order-1 order-md-2 mb-5">
+    <!-- Talep Tablar -->
+    <ul class="nav nav-pills mb-3 border-bottom" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-toggle="pill" href="#talep-tumu">Tümü</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-toggle="pill" href="#talep-iptaller">İptallerim</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" data-toggle="pill" href="#talep-iadeler">İadelerim</a>
+        </li>
+    </ul>
+    <!-- Talep Tablar Sonu-->
+    <!-- Talep Tablar içerik-->
+    <div class="tab-content">
+        <div class="tab-pane fade" id="talep-tumu">...</div>
+        <div class="tab-pane fade" id="talep-iptaller">...</div>
+        <div class="tab-pane fade show active" id="talep-iadeler">
+            <div class="tarih-listeleme">
+                <p class="text-muted mr-2 mb-0"><small>Tarihe Göre Listele</small></p>
+                <select class="custom-select">
+                    <option>Son 1 Yıl</option>
+                    <option>Son 6 Ay</option>
+                    <option>Son 3 Ay</option>
+                    <option>Son 1 Ay</option>
+                </select>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="alert alert-info shadow-sm">
+                        <h3 class="mb-0">Mart</h3>
+                    </div>
+                    <!-- Sipariş Kutusu -->
+                    <div class="siparis-kutu card mb-3">
+                        <div href="#" class="card-body">
+                            <div class="siparis-kutu__bilgi">
+                                <div class="siparis-kutu__bilgi-resimler">
+                                    <img src="~/assets/media/img/website/siparis-1.jpg">
+                                    <img src="~/assets/media/img/website/siparis-2.jpg">
+                                </div>
+                                <div class="siparis-kutu__bilgi-yazilar">
+                                    <small>Sipariş No: <strong>652 771 51</strong></small>
+                                    <p><small>23 Kasım Cum, 19:24</small></p>
+                                </div>
+                            </div>
+                            <div class="siparis-kutu__durum">
+                                <i class="fas fa-check-circle mr-1 text-success"></i> Ürün iade alındı
+                            </div>
+                            <div class="siparis-kutu__odeme">
+                                <p class="toplam">113,68 TL</p>
+                                <p><small>Kredi Kartı</small></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Sipariş Kutusu Sonu -->
+                    <!-- Sipariş Kutusu -->
+                    <div class="siparis-kutu card mb-3">
+                        <div href="#" class="card-body">
+                            <div class="siparis-kutu__bilgi">
+                                <div class="siparis-kutu__bilgi-resimler">
+                                    <img src="~/assets/media/img/website/siparis-1.jpg">
+                                </div>
+                                <div class="siparis-kutu__bilgi-yazilar">
+                                    <small>Sipariş No: <strong>458 60 02</strong></small>
+                                    <p><small>26 Kasım Cum, 19:24</small></p>
+                                </div>
+                            </div>
+                            <div class="siparis-kutu__durum">
+                                <i class="fas fa-clock mr-1 text-warning"></i> Ürün iade alındı
+                            </div>
+                            <div class="siparis-kutu__odeme">
+                                <p class="toplam">599 TL</p>
+                                <p><small>Kredi Kartı</small></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Sipariş Kutusu Sonu -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Talep Tablar içerik Sonu-->
+
+
+
+</div>
+

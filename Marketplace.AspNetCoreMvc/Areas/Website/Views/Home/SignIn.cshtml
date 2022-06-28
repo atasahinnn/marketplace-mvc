@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_RegisterLayout.cshtml";
+}
+
+<main>
+    <div class="login-register-area pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 ml-auto mr-auto">
+                    <div class="login-register-wrapper">
+                        <div class="login-register-tab-list nav">
+                            <a class="active" href="#">
+                                <h4> Giriş Yap </h4>
+                            </a>
+                            <a href="#">
+                                <h4> Üye Ol </h4>
+                            </a>
+                        </div>
+                        <!-- Form Tablar -->
+                        <div class="tab-content">
+                            <!-- Giriş form -->
+                            <div id="lg1" class="tab-pane active">
+                                <div class="login-form-container">
+                                    <div class="login-register-form">
+                                        <form action="#" method="post">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <input type="email" class="form-control" placeholder="E-Posta">
+                                                </div>
+                                            </div>
+                                            <input type="password" name="user-password" placeholder="Parola">
+                                            <div class="button-box">
+                                                <div class="login-toggle-btn">
+                                                    <input type="checkbox">
+                                                    <label>Beni Hatırla</label>
+                                                    <a href="#">Parolamı Unuttum</a>
+                                                </div>
+
+                                            </div>
+                                            <button type="submit" class="btn btn-info btn-lg btn-block">Giriş</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Form Tablar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

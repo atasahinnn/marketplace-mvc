@@ -1,0 +1,174 @@
+﻿
+@{
+    ViewData["Title"] = "Review";
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row py-3 border-bottom mb-3 align-items-center">
+        <div class="col">
+            <h2>Sipariş Onayı</h2>
+        </div>
+    </div>
+    <div class="row mb-2 py-3">
+        <div class="col-md-8 col-lg-9 mb-4">
+
+            <div class="card mb-4">
+
+                <div class="card-header bg-success">
+                    <h4 class="text-white mb-0">Sn. İbrahim Ferhan, <strong>siparişiniz onaylandı</strong></h4>
+                    <p class="text-white mb-0"><small>Alışverişinizde bizi tercih ettiğiniz için teşekkür ederiz.</small></p>
+                </div>
+
+                <div class="card-body bg-light py-3">
+                    <p class="lead">Sipariş Numaranız: <strong>98567489</strong></p>
+                </div>
+
+                <div class="card-body border-top">
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Ürün</th>
+                                    <th scope="col"> </th>
+                                    <th scope="col" class="text-center">Adet</th>
+                                    <th scope="col" class="text-center">Tutar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <img src="~/assets/media/img/website/siparis-1.jpg" style="width: 50px;">
+                                    </th>
+                                    <td>
+                                        <p class="mb-0"><small class="text-bold">Mapicut 113 A3 Kollu Kağıt Kesme Makinesi (giyotin)</small></p>
+                                        <p><small>Teslim Tarihi: 13 Ağustos</small></p>
+                                    </td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">84,41 TL</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <img src="~/assets/media/img/website/siparis-1.jpg" style="width: 50px;">
+                                    </th>
+                                    <td>
+                                        <p class="mb-0"><small class="text-bold">Mapicut 113 A3 Kollu Kağıt Kesme Makinesi (giyotin)</small></p>
+                                        <p><small>Teslim Tarihi: 13 Eylül</small></p>
+                                    </td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">111,53 TL</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <img src="~/assets/media/img/website/siparis-1.jpg" style="width: 50px;">
+                                    </th>
+                                    <td>
+                                        <p class="mb-0"><small class="text-bold">Mapicut 113 A3 Kollu Kağıt Kesme Makinesi (giyotin)</small></p>
+                                        <p><small>Teslim Tarihi: 10 Ağustos</small></p>
+                                    </td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">845,99 TL</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <h5 class="text-primary"><strong>Teslimat Bilgileri</strong></h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Teslimat Adresi</th>
+                                    <th scope="col">Fatura Adresi</th>
+                                    <th scope="col">Kargo </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Zuhurat Baba Mh. İncirli Cd. Çıkın Çıkmazı Sk. Toprak Site. No:5 D:1 Bakırköy İst.
+                                    </td>
+                                    <td>Zuhurat Baba Mh. İncirli Cd. Çıkın Çıkmazı Sk. Toprak Site. No:5 D:1 Bakırköy İst.</td>
+                                    <td><img src="https://dummyimage.com/80x40"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card-body border-top">
+                    <h5 class="text-primary"><strong>Ödeme Bilgileri</strong></h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Kredi Kartı</th>
+                                    <th scope="col">Tutar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        5549 60** **** **36
+                                    </td>
+                                    <td>105,99 TL</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="siparis-sonrasi-linkler">
+                        <a href="#">
+                            <div class="siparis-ikon">
+                                <i class="fas fa-truck-loading"></i>
+                            </div>
+                            <div class="siparis-link">
+                                Sipariş Süreçleri
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="siparis-ikon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="siparis-link">
+                                Müşteri Hizmetleri
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="siparis-ikon">
+                                <i class="far fa-file-alt"></i>
+                            </div>
+                            <div class="siparis-link">
+                                Satış Sözleşmesi
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3 position-relative">
+            <div class="card text-right shadow-sm siparis-ozeti">
+                <div class="card-body">
+                    <h4 class="card-title mb-0 text-primary"><strong>Sipariş Özeti</strong></h4>
+                    <p class="card-text mb-1">3 Ürün</p>
+                    <p class="text-muted mb-0"><small>KDV Dahil Toplam Tutar</small></p>
+                    <p class="h2 mb-0">80,51 TL</p>
+                    <p class="text-tiny">KDV (32,00)</p>
+                </div>
+                <div class="card-body bg-light">
+                    <p class="mb-0"><small>Ürünler Toplamı (KDV Dahil)</small></p>
+                    <p class="h4 text-muted">80,51 TL</p>
+                    <p class="text-muted mb-0"><small><a href="#"><i class="fas fa-info-circle mr-1"></i></a> Kargo Ücreti</small></p>
+                    <p class="text-bold mb-0"><del>9.45 TL</del></p>
+                    <p class="h5">0,00 TL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

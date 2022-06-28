@@ -1,0 +1,378 @@
+﻿@model CategoryDto
+
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form asp-route="/Admin/Category/AddCategory" method="POST">
+    <div class="card card-custom">
+        <div class="card-header flex-wrap border-0 pt-6 pb-0">
+            <div class="card-title">
+                <h3 class="card-label">
+                    @Localizer["KategoriEkle"]
+                </h3>
+            </div>
+            <div class="card-toolbar">
+                <!--begin::Button-->
+                <button type="submit" class="btn btn-primary font-weight-bolder w-100 w-lg-auto">
+                    <span class="svg-icon svg-icon-md">
+                        <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24" />
+                                <circle fill="#000000" cx="9" cy="15" r="6" />
+                                <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                            </g>
+                        </svg>
+                        <!--end::Svg Icon-->
+                    </span>@Localizer["Kaydet"]
+                </button>
+                <!--end::Button-->
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>@Localizer["UstKategori"]</label>
+                        <select class="form-control select2" id="TopCategoryId" name="TopCategoryId">
+                            <option value="">
+                                @Localizer["AnaKategori"]
+                            </option>
+                            @if (ViewBag.TopCategories != null)
+                            {
+                                @foreach (var item in ViewBag.TopCategories)
+                                {
+                                    @if (Model == null)
+                                    {
+                                        <option value="@item.Id">
+                                            @for (int i = 0; i < ViewBag.Languages.Count; i++)
+                                            {
+                                                @item.CategoryNames[i].Name
+
+                                                if (i < ViewBag.Languages.Count - 1)
+                                                {
+                                                    <text> - </text>
+                                                }
+                                            }
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        if (Model.TopCategoryId == item.Id)
+                                        {
+                                            <option value="@item.Id" selected>
+                                                @for (int i = 0; i < ViewBag.Languages.Count; i++)
+                                                {
+                                                    @item.CategoryNames[i].Name
+                                                    if (i < ViewBag.Languages.Count - 1)
+                                                    {
+                                                        <text> - </text>
+                                                    }
+                                                }
+                                            </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">
+                                                @for (int i = 0; i < ViewBag.Languages.Count; i++)
+                                                {
+                                                    @item.CategoryNames[i].Name
+                                                    if (i < ViewBag.Languages.Count - 1)
+                                                    {
+                                                        <text> - </text>
+                                                    }
+                                                }
+                                            </option>
+                                        }
+
+                                    }
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                @for (Int32 i = 0; i < ViewBag.Languages.Count; i++)
+                {
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label>@Localizer[ViewBag.Languages[i].Name]&nbsp;@Localizer["Adi"]</label>
+                            <input type="hidden" value="@ViewBag.Languages[i].Id" asp-for="CategoryNames[i].LanguageId" />
+                            <input dir="@ViewBag.Languages[i].Dir" asp-for="CategoryNames[i].Name" type="text" placeholder="@Localizer[ViewBag.Languages[i].Name] - @Localizer["Adi"]" class="form-control" />
+                            <span asp-validation-for="CategoryNames[i].Name" class="small text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label>@Localizer[ViewBag.Languages[i].Name]&nbsp;@Localizer["Link"]</label>
+                            <input type="hidden" value="@ViewBag.Languages[i].Id" asp-for="CategoryLinks[i].LanguageId" />
+                            <input dir="@ViewBag.Languages[i].Dir" asp-for="CategoryLinks[i].Link" type="text" placeholder="@Localizer[ViewBag.Languages[i].Name] - @Localizer["Link"]" class="form-control" />
+                            <span asp-validation-for="CategoryLinks[i].Link" class="small text-danger"></span>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>@Localizer["KategoriGrubu"]</label>
+                        <select class="form-control select2" name="allCategoryDropdown[]" multiple>
+                            <option disabled value="">
+                                @Localizer["SecimYapiniz"]
+                            </option>
+
+                            @for (Int32 i = 0; i < ViewBag.Properties.Count; i++)
+                            {
+                                string propertyText = "";
+                                for (Int32 j = 0; j < ViewBag.Properties[i].PropertyNames.Count; j++)
+                                {
+                                    if (j != 0)
+                                        propertyText += " - ";
+                                    propertyText += ViewBag.Properties[i].PropertyNames[j].Name;
+                                }
+
+                                @if (Model == null)
+                                {
+
+                                    <option value="@ViewBag.Properties[i].Id">
+                                        @propertyText
+                                    </option>
+                                }
+                                else
+                                {
+
+                                    if (Model.CategoryGroups[i].Id == ViewBag.Properties[i].Id)
+                                    {
+                                        <option value="@ViewBag.Properties[i].Id" selected>
+                                            @propertyText
+
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@ViewBag.Properties[i].Id">
+                                            @propertyText
+                                        </option>
+                                    }
+
+                                }
+
+                            }
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            @for (int i = 0; i < ViewBag.Properties.Count; i++)
+            {
+                <input type="hidden" asp-for="@Model.CategoryGroups[@i].Id" value="0" />
+            }
+
+
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group" id="brandCheckboxes">
+                        <label>@Localizer["Markalar"]</label>
+                        <div class="form-control" style="height:300px">
+                            <input class="form-control mb-3" type="text" placeholder="@Localizer["MarkaAra"]" id="brandChekboxesSearch" />
+                            @for (Int32 i = 0; i < ViewBag.Brands.Count; i++)
+                            {
+                                string brandText = ""; for (Int32 j = 0; j < ViewBag.Brands[i].BrandNames.Count; j++)
+                                {
+                                    if (j != 0)
+                                        brandText += " - ";
+                                    brandText += ViewBag.Brands[i].BrandNames[j].Name;
+                                }
+                                <div class="checkbox-inline">
+                                    @if (Model == null)
+                                    {
+                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                            <input type="checkbox" name="Brands[@i].Id" value="@ViewBag.Brands[i].Id" /> <span></span> @brandText
+                                            <input type="hidden" name="Brands[@i].BrandNames[0]" />
+                                        </label>
+                                    }
+                                    else
+                                    {
+                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                            @if (Model.Brands.FirstOrDefault(x => x.Id == ViewBag.Brands[i].Id) != null)
+                                            {
+                                                <input type="checkbox" name="Brands[@i].Id" value="@ViewBag.Brands[i].Id" checked /> <span></span> @brandText
+                                            }
+                                            else
+                                            {
+                                                <input type="checkbox" name="Brands[@i].Id" value="@ViewBag.Brands[i].Id" /> <span></span> @brandText
+                                            }
+                                            <input type="hidden" name="Brands[@i].BrandNames[0]" />
+                                        </label>
+                                    }
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group" id="categoryPropertyCheckboxes">
+                        <label>@Localizer["Ozellikler"]</label>
+                        <div class="form-control" style="height: 300px;" @*overflow-y: scroll;*@>
+                            <input class="form-control  mb-3" type="text" placeholder="@Localizer["OzellikAra"]" id="categoryPropertyChekboxesSearch" />
+
+                            @if (Model != null)
+                            {
+                                int countReq = 0;
+                                int temp = 0;
+                                @for (Int32 i = 0; i < ViewBag.Properties.Count; i++)
+                                {
+                                    string propertyText = "";
+                                    for (Int32 j = 0; j < ViewBag.Properties[i].PropertyNames.Count; j++)
+                                    {
+                                        if (j != 0)
+                                            propertyText += " - ";
+                                        propertyText += ViewBag.Properties[i].PropertyNames[j].Name;
+                                    }
+
+                                    <div class="row">
+                                        <div class="checkbox-inline col-12">
+
+
+                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary w-100">
+                                                <input type="hidden" name="CategoryProperties[@i].Id" value="0" />
+
+                                                @if (Model.CategoryProperties.FirstOrDefault(x => x.PropertyId == ViewBag.Properties[i].Id) != null)
+                                                {
+                                                    <input onclick="isChecked(this)" type="checkbox" name="CategoryProperties[@i].PropertyId" value="@ViewBag.Properties[i].Id" checked /> <span></span> @propertyText
+                                                }
+                                                else
+                                                {
+                                                    <input onclick="isChecked(this)" type="checkbox" name="CategoryProperties[@i].PropertyId" value="@ViewBag.Properties[i].Id" /> <span></span> @propertyText
+                                                }
+
+                                                @if (Model.CategoryProperties.FirstOrDefault(x => x.PropertyId == ViewBag.Properties[i].Id) != null && Model.CategoryProperties[temp].Required == true)
+                                                {
+
+                                                    <button style="background-color: red; padding: 2px 5px;" type="button" class="btn btn-sm btn-primary border-0 rounded ml-auto " onclick="changeColor(this)"><i onclick="changeIconColor(this)" class="fas fa-lock p-0"></i></button>
+                                                    <input name="CategoryProperties[@i].Required" type="hidden" value="true" />
+
+                                                    if (Model.CategoryProperties.FirstOrDefault(x => x.PropertyId == ViewBag.Properties[i].Id) != null && Model.CategoryProperties[temp].Variation == true)
+                                                    {
+                                                        <button type="button" style="background-color: red; padding: 2px 5px; " class="btn btn-sm btn-primary ml-1 border-0 rounded" onclick="changeVariation(this)">
+                                                            <i onclick="changeIconVariation(this)" class="far fa-check-circle p-0"></i>
+                                                        </button>
+                                                        <input type="hidden" name="CategoryProperties[@i].Variation" value="true" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <button type="button" style="background-color: dodgerblue; padding: 2px 5px; " class="btn btn-sm btn-primary ml-1 border-0 rounded" onclick="changeVariation(this)">
+                                                            <i onclick="changeIconVariation(this)" class="far fa-times-circle p-0"></i>
+                                                        </button>
+                                                        <input type="hidden" name="CategoryProperties[@i].Variation" value="false" />
+                                                    }
+
+                                                    countReq++;
+                                                    temp++;
+                                                }
+                                                else if (Model.CategoryProperties.FirstOrDefault(x => x.PropertyId == ViewBag.Properties[i].Id) != null && Model.CategoryProperties[temp].Required == false)
+                                                {
+
+                                                    <button style="background-color: dodgerblue; padding: 2px 5px;" type="button" class="btn btn-sm btn-primary border-0 rounded ml-auto " onclick="changeColor(this)"><i onclick="changeIconColor(this)" class="fas fa-key p-0"></i></button>
+                                                    <input name="CategoryProperties[@i].Required" type="hidden" value="false" />
+
+
+                                                    if (Model.CategoryProperties.FirstOrDefault(x => x.PropertyId == ViewBag.Properties[i].Id) != null && Model.CategoryProperties[temp].Variation == true)
+                                                    {
+                                                        <button type="button" style="background-color: red; padding: 2px 5px; " class="btn btn-sm btn-primary ml-1 border-0 rounded" onclick="changeVariation(this)">
+                                                            <i onclick="changeIconVariation(this)" class="far fa-check-circle p-0"></i>
+                                                        </button>
+                                                        <input type="hidden" name="CategoryProperties[@i].Variation" value="true" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <button type="button" style="background-color: dodgerblue; padding: 2px 5px; " class="btn btn-sm btn-primary ml-1 border-0 rounded" onclick="changeVariation(this)">
+                                                            <i onclick="changeIconVariation(this)" class="far fa-times-circle p-0"></i>
+                                                        </button>
+                                                        <input type="hidden" name="CategoryProperties[@i].Variation" value="false" />
+                                                    }
+
+                                                    countReq++;
+                                                    temp++;
+
+                                                }
+
+                                                else
+                                                {
+                                                    <button style="background-color: dodgerblue; padding: 2px 5px;" type="button" class="btn btn-sm btn-primary border-0 rounded d-none ml-auto " onclick="changeColor(this)"><i onclick="changeIconColor(this)" class="fas fa-key p-0"></i></button>
+                                                    <input name="CategoryProperties[@i].Required" type="hidden" value="false" />
+
+                                                    <button type="button" style="background-color: dodgerblue; padding: 2px 5px; " class="btn btn-sm btn-primary ml-1 border-0 rounded d-none" onclick="changeVariation(this)">
+                                                        <i onclick="changeIconVariation(this)" class="far fa-times-circle p-0"></i>
+                                                    </button>
+                                                    <input type="hidden" name="CategoryProperties[@i].Variation" value="false" />
+
+                                                    countReq++;
+
+                                                }
+                                            </label>
+
+
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                            else
+                            {
+                                @for (Int32 i = 0; i < ViewBag.Properties.Count; i++)
+                                {
+                                    string propertyText = ""; for (Int32 j = 0; j < ViewBag.Properties[i].PropertyNames.Count; j++)
+                                    {
+                                        if (j != 0)
+                                            propertyText += " - ";
+                                        propertyText += ViewBag.Properties[i].PropertyNames[j].Name;
+                                    }
+
+                                    <div class="row">
+                                        <div class="checkbox-inline col-12">
+
+                                            @* <input type="hidden" asp-for="@ViewBag.Properties[i]"/>*@
+                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary w-100">
+                                                <input type="hidden" name="CategoryProperties[@i].Id" value="0" />
+                                                <input onclick="isChecked(this)" type="checkbox" name="CategoryProperties[@i].PropertyId" value="@ViewBag.Properties[i].Id" /> <span></span> @propertyText
+
+                                                <button title="Required" style="background-color: dodgerblue; padding: 2px 5px; " type="button" class="btn btn-sm btn-primary border-0 rounded d-none ml-auto " onclick="changeColor(this)">
+                                                    <i onclick="changeIconColor(this)" class="fas fa-key p-0"></i>
+                                                </button>
+                                                <input type="hidden" name="CategoryProperties[@i].Required" value="false" />
+
+                                                <button title="Variation" type="button" style="background-color: dodgerblue; padding: 2px 5px; " class="btn btn-sm btn-primary ml-1 border-0 rounded d-none" onclick="changeVariation(this)">
+                                                    <i onclick="changeIconVariation(this)" class="far fa-times-circle p-0"></i>
+                                                </button>
+                                                <input type="hidden" name="CategoryProperties[@i].Variation" value="false" />
+
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section JavaScript{
+    <script src="~/assets/js/pages/admin/add-category.js"></script>
+}
+
+
+

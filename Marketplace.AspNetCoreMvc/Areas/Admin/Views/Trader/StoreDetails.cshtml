@@ -1,0 +1,1175 @@
+﻿@model SellerStoreDetailVm
+@{
+    ViewData["Title"] = "AddPersonalStore";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card card-custom gutter-b">
+    <div class="tab-panel">
+        <div class="card-header">
+            <ul class="nav nav-pills nav-light-warning nav-fill" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="store-tab" data-toggle="tab" href="#store" aria-controls="store">
+                        <span class="font-size-h5 navi-text font-weight-bolder">@Localizer["MagazaBilgileri"]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" aria-controls="contact">
+                        <span class="font-size-h5 navi-text font-weight-bolder">@Localizer["IletisimBilgileri"]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="document-tab" data-toggle="tab" href="#document" aria-controls="document">
+                        <span class="font-size-h5 navi-text font-weight-bolder">@Localizer["EvrakBilgileri"]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="warehouse-tab" data-toggle="tab" href="#warehouse" aria-controls="warehouse">
+                        <span class="font-size-h5 navi-text font-weight-bolder">@Localizer["DepoBilgileri"]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="holiday-tab" data-toggle="tab" href="#holiday" aria-controls="holiday">
+                        <span class="font-size-h5 navi-text font-weight-bolder">@Localizer["HesapDurumu"]</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content mt-5" id="myTabContent">
+                <div class="tab-pane fade active show" id="store" role="tabpanel" aria-labelledby="store-tab">
+                    @if (Model.PersonalStore != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header bg-gray-300">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6 class="font-weight-bolder">@Localizer["FirmaBilgileri"]</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="text-muted font-weight-bolder float-right">@Localizer["MagazaID"]&nbsp;#@Model.PersonalStore.Id</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["MagazaAdi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.PersonalStore.StoreName</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Unvan"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.PersonalStore.Title</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Web"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.PersonalStore.Website</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["UlkeKodu"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.PersonalStore.CountryCallingCodeId</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header bg-gray-300">
+                                        <div class="col-md-6">
+                                            <h6 class="font-weight-bolder">@Localizer["AdresBilgileri"]</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Ulke"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg" id="personalStoreCountry">@Model.PersonalStore.CountryId</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Sehir"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg" id="personalStoreCity">@Model.PersonalStore.CityId</p>
+                                            </div>
+                                        </div>
+                                        @if (Model.PersonalStore.DistrictId != 0)
+                                        {
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Ilce"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="personalStoreDistrict">@Model.PersonalStore.DistrictId</p>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["LibyaBolge"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg">@Model.PersonalStore.DistrictForLibya</p>
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Adres"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.PersonalStore.Address</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6 class="font-weight-bolder">@Localizer["KisiselBilgiler"]</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="text-muted font-weight-bolder float-right">@Localizer["SaticiID"]&nbsp;#@Model.PersonalStore.SellerId</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["VatandaslikNo"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.PersonalStore.CitizenshipNumber</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["DogumTarihi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.PersonalStore.BirthDate.ToString("dd/MM/yyyy")</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["TelefonNumarasi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.PersonalStore.Phone</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6 class="font-weight-bolder">@Localizer["SatisKategorileri"]</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            @for (int i = 0; i < Model.PersonalStore.Categories.Count; i++)
+                                            {
+                                                <div class="col-md-6">
+                                                    <p class="card-label font-size-lg font-weight-bold h4">-&nbsp;@Model.PersonalStore.Categories[i].CategoryNames[1].Name</p>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                    else if (Model.CompanyStore != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header bg-gray-300">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6 class="font-weight-bolder">@Localizer["FirmaBilgileri"]</h6>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="text-muted font-weight-bolder float-right">@Localizer["MagazaID"]&nbsp;#@Model.CompanyStore.Id</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["MagazaAdi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.StoreName</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Unvan"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.Title</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["BasvuranPozisyonu"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg" id="applicantPositionName">@Model.CompanyStore.ApplicantPositionId</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Aciklama"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.CompanyDescription</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header bg-gray-300">
+                                        <div class="col-md-6">
+                                            <h6 class="font-weight-bolder">@Localizer["AdresBilgileri"]</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Ulke"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg" id="companyStoreCountry">@Model.CompanyStore.CountryId</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Sehir"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg" id="companyStoreCity">@Model.CompanyStore.CityId</p>
+                                            </div>
+                                        </div>
+                                        @if (Model.CompanyStore.DistrictId != 0)
+                                        {
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Ilce"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="companyStoreDistrict">@Model.CompanyStore.DistrictId</p>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["LibyaBolge"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="companyStoreDistrict">@Model.CompanyStore.DistrictForLibya</p>
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["Adres"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.CompanyAddress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header bg-white-o-30">
+                                        <div class="col-md-6">
+                                            <h6 class="font-weight-bolder">@Localizer["YetkiliBilgileri"]</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["YetkiliAd"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.AuthorizedPersonFirstName</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["YetkiliSoyad"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.AuthorizedPersonLastName</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["VatandaslikNumarasi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.AuthorizedPersonIdentityNumber</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["YetkiliEmail"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.AuthorizedPersonEmail</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["YetkiliTelefonNo"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.AuthorizedPersonPhone</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header bg-white-o-30">
+                                        <div class="col-md-6">
+                                            <h6 class="font-weight-bolder">@Localizer["TicaretBilgileri"]</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["VergiIlcesi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg" id="companyStoreTaxCity">@Model.CompanyStore.TaxCityId</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["VergiBolgesi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.TaxDistrict</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["VergiNumarasi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.TaxNo</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["TicaretSicilNo"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.TradeRegisterNumber</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold font-size-lg">@Localizer["SirketTuru"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg" id="companyTypeName">@Model.CompanyStore.CompanyTypeId</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mt-5">
+                                    <div class="card-header bg-white-o-30">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6 class="font-weight-bolder">@Localizer["SatisKategorileri"]</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            @for (int i = 0; i < Model.CompanyStore.Categories.Count; i++)
+                                            {
+                                                <div class="col-md-6">
+                                                    <p class="card-label font-size-lg font-weight-bold h4">-&nbsp;@Model.CompanyStore.Categories[i].CategoryNames[1].Name</p>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    @if (Model.PersonalStore != null)
+                    {
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-gray-300">
+                                    <h6 class="font-weight-bolder">@Localizer["IletisimBilgisi"]</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <p class="card-label font-weight-bold font-size-lg">@Localizer["WebSitesi"]</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <p class="font-weight-bold float-right">:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="card-label font-size-lg">@Model.PersonalStore.Website</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <p class="card-label font-weight-bold font-size-lg">@Localizer["TelefonNumarasi"]</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <p class="font-weight-bold float-right">:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="card-label font-size-lg">@Model.PersonalStore.Phone</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <p class="card-label font-weight-bold font-size-lg">@Localizer["UlkeKodu"]</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <p class="font-weight-bold float-right">:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="card-label font-size-lg">@Model.PersonalStore.CountryCallingCodeId</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else if (Model.CompanyStore != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header bg-gray-300">
+                                        <h6 class="font-weight-bolder">@Localizer["MagazaIletisimBilgisi"]</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold">@Localizer["WebSitesi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.Website</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold">@Localizer["TelefonNumarasi"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.Phone</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold">@Localizer["UlkeKodu"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.CountryCallingCodeId</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header bg-gray-300">
+                                        <h6 class="font-weight-bolder">@Localizer["YetkiliIletisimBilgisi"]</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold">@Localizer["YetkiliEmail"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.AuthorizedPersonEmail</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="card-label font-weight-bold">@Localizer["YetkiliTelefonNo"]</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <p class="font-weight-bold float-right">:</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="card-label font-size-lg">@Model.CompanyStore.AuthorizedPersonPhone</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+                <div class="tab-pane fade" id="document" role="tabpanel" aria-labelledby="document-tab">
+                    @if (Model.PersonalStoreDocuments == null && Model.CompanyStoreDocuments == null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert h2">
+                                    <p class="pt-3 text-center font-weight-bolder">@Localizer["EvrakYuklemedi"]</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-custom alert-light alert-shadow gutter-b">
+                            <div class="alert-icon">
+                                <span class="flaticon2-sheet text-primary icon-xl">
+                                </span>
+                            </div>
+                            <div class="alert-text text-primary font-weight-bold">
+                                <p>@Localizer["EvrakAlert"]</p>
+                            </div>
+                        </div>
+                    }
+                    <div class="card p-5">
+                        <form method="post" enctype="multipart/form-data" id="myForm">
+                            <div class="overflow-auto">
+                                <table class="table table-hover table-bordered mb-2" id="documentTable">
+                                    <thead class="bg-gray-200">
+                                        <tr>
+                                            <th scope="col" class="text-center">@Localizer["EvrakAdi"]</th>
+                                            <th scope="col" class="text-center">@Localizer["YuklenmeTarihi"]</th>
+                                            <th scope="col" class="text-center">@Localizer["Statu"]</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model.PersonalStoreDocuments != null)
+                                        {
+                                            for (int i = 0; i < Model.PersonalStoreDocuments.Documents.Count; i++)
+                                            {
+                                                <tr>
+                                                    <td class="text-center align-middle">
+                                                        @if (@Model.PersonalStoreDocuments.Documents[i].Path != null)
+                                                        {
+                                                            <a href="/assets/document/update/@Model.PersonalStoreDocuments.Documents[i].Path" class="btn btn-icon btn-success" download="@Model.PersonalStore.Title - @Model.PersonalStoreDocuments.Documents[i].DocumentNames[1].Name - @Model.PersonalStoreDocuments.Documents[i].Path">
+                                                                <i class="fas fa-file-download"></i>
+                                                            </a>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <button type="button" class="btn btn-icon btn-sm btn-danger">
+                                                                <i class="ki ki-outline-info"></i>
+                                                            </button>
+                                                        }
+
+                                                        <span>@Model.PersonalStoreDocuments.Documents[i].DocumentNames[1].Name</span>
+                                                    </td>
+                                                    <td class="text-center align-middle">@Model.PersonalStoreDocuments.Documents[i].UploadDate?.ToString("dd/MM/yyyy")</td>
+                                                    <td class="bg-success-o-20 font-weight-boldest align-middle" id="documentStatusNameIndex-@i">
+                                                        @foreach (var documentStatus in ViewBag.DocumentStatus)
+                                                        {
+                                                            string statusName = null;
+                                                            for (int j = 0; j < documentStatus.DocumentStatusNames.Count; j++)
+                                                            {
+                                                                if (j != 0)
+                                                                {
+                                                                    statusName += documentStatus.DocumentStatusNames[j].Name;
+                                                                }
+                                                            }
+                                                            if (documentStatus.Id == Model.PersonalStoreDocuments.Documents[i].DocumentStatusId)
+                                                            {
+                                                                @Localizer[statusName]
+                                                            }
+                                                        }
+
+                                                        <a class="float-right" data-toggle="modal" data-target="#documentModal" onclick="fillModal(1, @Model.PersonalStore.SellerId, @Model.PersonalStoreDocuments.Documents[i].Id, @Model.PersonalStoreDocuments.Documents[i].DocumentStatusId, '@Model.PersonalStoreDocuments.Documents[i].Description')"><label class="text-danger font-weight-bold cursor-pointer"><ins>@Localizer["Duzenle"]</ins></label></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            for (int i = 0; i < Model.CompanyStoreDocuments.Documents.Count; i++)
+                                            {
+                                                <tr>
+                                                    <td class="text-justify align-middle">
+                                                        @if (@Model.CompanyStoreDocuments.Documents[i].Path != null)
+                                                        {
+                                                            <a href="/assets/document/update/@Model.CompanyStoreDocuments.Documents[i].Path" class="btn btn-icon btn-primary btn-sm" download="@Model.CompanyStore.Title - @Model.CompanyStoreDocuments.Documents[i].DocumentNames[1].Name - @Model.CompanyStoreDocuments.Documents[i].Path">
+                                                                <i class="fas fa-file-download"></i>
+                                                            </a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <button type="button" class="btn btn-icon btn-sm btn-danger">
+                                                                <i class="ki ki-outline-info"></i>
+                                                            </button>
+                                                        }
+                                                        <span>@Model.CompanyStoreDocuments.Documents[i].DocumentNames[1].Name</span>
+
+                                                    </td>
+                                                    <td class="text-center align-middle">@Model.CompanyStoreDocuments.Documents[i].UploadDate?.ToString("dd/MM/yyyy")</td>
+                                                    <td class="bg-success-o-20 font-weight-boldest align-middle" id="documentStatusNameIndex-@i">
+                                                        @foreach (var documentStatus in ViewBag.DocumentStatus)
+                                                        {
+                                                            string statusName = null;
+                                                            for (int j = 0; j < documentStatus.DocumentStatusNames.Count; j++)
+                                                            {
+                                                                if (j != 0)
+                                                                {
+                                                                    statusName += documentStatus.DocumentStatusNames[j].Name;
+                                                                }
+                                                            }
+                                                            if (documentStatus.Id == Model.CompanyStoreDocuments.Documents[i].DocumentStatusId)
+                                                            {
+                                                                @Localizer[statusName]
+                                                            }
+                                                        }
+
+                                                        <a class="float-right" data-toggle="modal" data-target="#documentModal" onclick="fillModal(2, @Model.CompanyStore.SellerId, @Model.CompanyStoreDocuments.Documents[i].Id, @Model.CompanyStoreDocuments.Documents[i].DocumentStatusId, '@Model.CompanyStoreDocuments.Documents[i].Description')"><label class="text-danger font-weight-bold cursor-pointer"><ins>@Localizer["Duzenle"]</ins></label></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade" id="warehouse" role="tabpanel" aria-labelledby="warehouse-tab">
+                    @if (Model.PersonalStoreWarehouses != null)
+                    {
+                        <div class="row">
+                            @for (int i = 0; i < Model.PersonalStoreWarehouses.Warehouses.Count; i++)
+                            {
+                                <div class="col-md-6">
+                                    <div class="card mt-5">
+                                        <div class="card-header bg-gray-300">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6 class="font-weight-bolder">@Model.PersonalStoreWarehouses.Warehouses[i].Name</h6>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="text-muted font-weight-bolder float-right">@Localizer["DepoID"]&nbsp;#@Model.PersonalStoreWarehouses.Warehouses[i].Id</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Ulke"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="personalStoreWarehouseCountry">@Model.PersonalStoreWarehouses.Warehouses[i].Country.CountryNames[0].Name - @Model.PersonalStoreWarehouses.Warehouses[i].Country.CountryNames[1].Name</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Sehir"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="personalStoreWarehouseCity">@Model.PersonalStoreWarehouses.Warehouses[i].City.CityNames[0].Name - @Model.PersonalStoreWarehouses.Warehouses[i].City.CityNames[1].Name</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Ilce"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="personalStoreWarehouseDistrict">@Model.PersonalStoreWarehouses.Warehouses[i].District.DistrictNames[0].Name - @Model.PersonalStoreWarehouses.Warehouses[i].District.DistrictNames[1].Name</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Adres"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg">@Model.PersonalStoreWarehouses.Warehouses[i].Address</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else if (Model.CompanyStoreWarehouses != null)
+                    {
+                        <div class="row">
+                            @for (int i = 0; i < Model.CompanyStoreWarehouses.Warehouses.Count; i++)
+                            {
+                                <div class="col-md-6">
+                                    <div class="card mt-5">
+                                        <div class="card-header bg-gray-300">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6 class="font-weight-bolder">@Model.CompanyStoreWarehouses.Warehouses[i].Name</h6>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="text-muted font-weight-bolder float-right">@Localizer["DepoID"]&nbsp;#@Model.CompanyStoreWarehouses.Warehouses[i].Id</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Ulke"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="companyStoreWarehouseCountry">
+                                                        @Model.CompanyStoreWarehouses.Warehouses[i].Country.CountryNames[0].Name - @Model.CompanyStoreWarehouses.Warehouses[i].Country.CountryNames[1].Name
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Sehir"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="companyStoreWarehouseCity">@Model.CompanyStoreWarehouses.Warehouses[i].City.CityNames[0].Name - @Model.CompanyStoreWarehouses.Warehouses[i].City.CityNames[1].Name</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Ilce"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg" id="companyStoreWarehouseDistrict">@Model.CompanyStoreWarehouses.Warehouses[i].District.DistrictNames[0].Name - @Model.CompanyStoreWarehouses.Warehouses[i].District.DistrictNames[1].Name</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <p class="card-label font-weight-bold font-size-lg">@Localizer["Adres"]</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p class="font-weight-bold float-right">:</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="card-label font-size-lg">@Model.CompanyStoreWarehouses.Warehouses[i].Address</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p>@Localizer["DepoYok"]</p>
+                    }
+                </div>
+
+
+                <div class="tab-pane fade" id="holiday" role="tabpanel" aria-labelledby="holiday-tab">
+                    <form method="post" enctype="multipart/form-data" id="statusForm">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="col-md-10 float-right">
+                                        <div class="radio-inline font-weight-bold p-2">
+                                            @foreach (var status in ViewBag.SellerStatus)
+                                            {
+                                                string sellerStatusName = null;
+                                                int statusId = 0;
+                                                for (int i = 0; i < status.SellerStatusNames.Count; i++)
+                                                {
+                                                    sellerStatusName = status.SellerStatusNames[1].Name;
+                                                    statusId = status.SellerStatusNames[i].SellerStatusId;
+                                                }
+                                                <label class="radio radio-lg radio-primary">
+                                                    @if (Model.SellerStatus.SellerStatusId == statusId)
+                                                    {
+                                                        <input type="radio" id="SellerStatusId" name="SellerStatusId" value="@statusId" checked onchange="globalStatusCode=@statusId" />
+                                                        <span></span>
+                                                        <input type="hidden" id="Id" name="Id" value="@Model.SellerStatus.Id" />
+                                                        @Localizer[sellerStatusName]
+                                                    }
+                                                    else
+                                                    {
+                                                        <input type="radio" id="SellerStatusId" name="SellerStatusId" value="@statusId" onchange="globalStatusCode=@statusId" />
+                                                        <span></span>
+                                                        <input type="hidden" id="Id" name="Id" value="@Model.SellerStatus.Id" />
+                                                        @Localizer[sellerStatusName]
+                                                    }
+                                                </label>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="float-right">
+                                            <button class="btn btn-primary font-weight-bolder" type="submit">
+                                                &nbsp;&nbsp;@Localizer["DurumuGuncelle"]
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12 mt-3">
+                                        <label class="d-block bg-light mb-0 text-center p-3 rounded-top border font-weight-bold">Yorum</label>
+                                        <textarea rows="4" name="AdminSellerStatusComment" id="AdminSellerStatusComment" maxlength="1000" class="form-control rounded-0 rounded-bottom">@Model.SellerStatus.AdminSellerStatusComment</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--DocumentModal-->
+<div class="modal fade" id="documentModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Localizer["EvrakDurumu"]&nbsp;#</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" enctype="multipart/form-data" id="documentForm">
+                <div class="modal-body text-center">
+                    <div class="form-row">
+                        <div class="form-group col-md-12 text-center">
+                            <label class="col-form-label font-weight-bold">@Localizer["EvrakDurum"]</label>
+                            <div class="border border-secondary p-5">
+                                <div class="radio-inline justify-content-center p-2">
+                                    <label class="radio radio-lg radio-primary">
+                                        <input type="radio" id="documentStatusIdModal" name="documentStatusIdModal" value="3" />
+                                        <span></span>
+                                        @Localizer["Onaylandi"]
+                                    </label>
+                                    <label class="radio radio-lg radio-primary">
+                                        <input type="radio" id="documentStatusIdModal" name="documentStatusIdModal" value="2" />
+                                        <span></span>
+                                        @Localizer["OnayBekliyor"]
+                                    </label>
+                                    <label class="radio radio-lg radio-primary">
+                                        <input type="radio" id="documentStatusIdModal" name="documentStatusIdModal" value="4" />
+                                        <span></span>
+                                        @Localizer["Onaylanmadi"]
+                                    </label>
+                                    <label class="radio radio-lg radio-primary">
+                                        <input type="radio" id="documentStatusIdModal" name="documentStatusIdModal" value="1" />
+                                        <span></span>
+                                        @Localizer["Yuklenmedi"]
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="col-form-label font-weight-bold">@Localizer["Yorum"]</label>
+                            <textarea type="text" id="documentDescriptionModal" name="documentDescriptionModal" class="form-control" rows="3" placeholder="@Localizer["EvrakInceleniyor"]"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="documentIdModal" name="documentIdModal" />
+                <input type="hidden" id="documentStoreTypeIdModal" name="documentStoreTypeIdModal" />
+                <input type="hidden" id="documentSellerIdModal" name="documentSellerIdModal" />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@Localizer["Kapat"]</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["Guncelle"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--DocumentModal:End-->
+<!--CriticalOperationModal-->
+<div class="modal fade" id="criticalOperationModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Localizer["KritikBaslik"]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" enctype="multipart/form-data" id="criticalOperationForm">
+                <div class="modal-body text-center">
+                    <div class="alert alert-custom alert-light-warning fade show mb-5" role="alert">
+                        <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                        <div class="alert-text">@Localizer["KritikSpan"]</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12 text-center">
+                            <label class="col-form-label font-weight-bold">@Localizer["MagazaHesapDurumu"]</label>
+                            <div class="border border-secondary p-5">
+                                <div class="radio-inline justify-content-center p-2">
+                                    @foreach (var status in ViewBag.SellerStatus)
+                                    {
+                                        string sellerStatusName = null;
+                                        int statusId = 0;
+                                        for (int i = 0; i < status.SellerStatusNames.Count; i++)
+                                        {
+                                            sellerStatusName = status.SellerStatusNames[1].Name;
+                                            statusId = status.SellerStatusNames[i].SellerStatusId;
+                                        }
+                                        <label class="radio radio-lg radio-primary">
+                                            @if (Model.SellerStatus.SellerStatusId == statusId)
+                                            {
+                                                <input type="radio" id="SellerStatusId" name="SellerStatusId" value="@statusId" checked onchange="globalStatusCodeCritical=@statusId" />
+                                                <span></span>
+                                                <input type="hidden" id="Id" name="Id" value="@Model.SellerStatus.Id" />
+                                                @Localizer[sellerStatusName]
+                                            }
+                                            else
+                                            {
+                                                <input type="radio" id="SellerStatusId" name="SellerStatusId" value="@statusId" onchange="globalStatusCodeCritical=@statusId" />
+                                                <span></span>
+                                                <input type="hidden" id="Id" name="Id" value="@Model.SellerStatus.Id" />
+                                                @Localizer[sellerStatusName]
+                                            }
+                                        </label>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12 mt-3">
+                            <label class="d-block bg-light mb-0 text-center p-3 rounded-top border font-weight-bold">Yorum</label>
+                            <textarea rows="4" name="AdminSellerStatusComment" id="AdminSellerStatusCommentCritical" maxlength="1000" class="form-control rounded-0 rounded-bottom">@Model.SellerStatus.AdminSellerStatusComment</textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary " data-dismiss="modal">@Localizer["Kapat"]</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["Guncelle"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!---CriticalOperation:End-->
+
+
+@section JavaScript{
+    @if (Model.PersonalStore == null)
+    {
+        <script>
+                var companyStoreTaxCityId = @Model.CompanyStore.TaxCityId;
+                var companyStoreCountryId = @Model.CompanyStore.CountryId;
+                var companyStoreCityId = @Model.CompanyStore.CityId;
+                var companyStoreDistrictId = @Model.CompanyStore.DistrictId;
+                var companyStoreApplicantPositionId = @Model.CompanyStore.ApplicantPositionId;
+                var companyStoreCompanyTypeId = @Model.CompanyStore.CompanyTypeId;
+                var personalStoreCountryId = null;
+                var personalStoreCityId = null;
+                var personalStoreDistrictId = null;
+        </script>
+    }
+    else
+    {
+        <script>
+                 var personalStoreCountryId = @Model.PersonalStore.CountryId;
+                 var personalStoreCityId = @Model.PersonalStore.CityId;
+                 var personalStoreDistrictId = @Model.PersonalStore.DistrictId;
+                 var companyStoreCountryId = null;
+                 var companyStoreCityId = null;
+                 var companyStoreDistrictId = null;
+                 var companyStoreApplicantPositionId = null;
+                 var companyStoreCompanyTypeId = null;
+        </script>
+    }
+    <script src="~/assets/js/pages/admin/store-details.js"></script>
+    <script>
+       var globalStatusCode=@Model.SellerStatus.SellerStatusId;
+       var globalStatusCodeCritical=@Model.SellerStatus.SellerStatusId;
+    </script>
+}

@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewData["Title"] = "Orders";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+
+
+<div class="col-md-8 col-lg-9 order-1 order-md-2 mb-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="alert alert-info shadow-sm">
+                <h3 class="mb-0">Mart</h3>
+            </div>
+            <!-- Sipariş Kutusu -->
+            <div class="siparis-kutu card mb-3">
+                <a href="#" class="card-body">
+                    <div class="siparis-kutu__bilgi">
+                        <div class="siparis-kutu__bilgi-resimler">
+                            <img src="~/assets/media/img/website/siparis-1.jpg">
+                            <img src="~/assets/media/img/website/siparis-2.jpg">
+                        </div>
+                        <div class="siparis-kutu__bilgi-yazilar">
+                            <small>Sipariş No: <strong>652 771 51</strong></small>
+                            <p><small>23 Kasım Cum, 19:24</small></p>
+                        </div>
+                    </div>
+                    <div class="siparis-kutu__durum">
+                        <i class="fas fa-check-circle mr-1 text-success"></i> Sipariş tamamlandı
+                    </div>
+                    <div class="siparis-kutu__odeme">
+                        <p class="toplam">113,68 TL</p>
+                        <p><small>Kredi Kartı</small></p>
+                    </div>
+                </a>
+
+            </div>
+            <!-- Sipariş Kutusu Sonu -->
+            <!-- Sipariş Kutusu -->
+            <div class="siparis-kutu card mb-3">
+                <a href="#" class="card-body">
+                    <div class="siparis-kutu__bilgi">
+                        <div class="siparis-kutu__bilgi-resimler">
+                            <img src="~/assets/media/img/website/siparis-1.jpg">
+                        </div>
+                        <div class="siparis-kutu__bilgi-yazilar">
+                            <small>Sipariş No: <strong>458 60 02</strong></small>
+                            <p><small>26 Kasım Cum, 19:24</small></p>
+                        </div>
+                    </div>
+                    <div class="siparis-kutu__durum">
+                        <i class="fas fa-clock mr-1 text-warning"></i> 1 Ürün Teslim Edilecek
+                    </div>
+                    <div class="siparis-kutu__odeme">
+                        <p class="toplam">599 TL</p>
+                        <p><small>Kredi Kartı</small></p>
+                    </div>
+                </a>
+                <!-- Sipariş Bilgisi Gizli -->
+                <div class="card-footer" id="siparisDetayi2">
+                    <div class="siparis-aksiyonlar mb-1">
+                        <a href="#">
+                            <div class="siparis-aksiyonlar__icon">
+                                <i class="fas fa-cart-plus"></i>
+                            </div>
+                            <small>Tekrar Al</small>
+                        </a>
+                        <a href="#">
+                            <div class="siparis-aksiyonlar__icon">
+                                <i class="far fa-eye-slash"></i>
+                            </div>
+                            <small>Siparişi Gizle</small>
+                        </a>
+                        <a href="#">
+                            <div class="siparis-aksiyonlar__icon">
+                                <i class="far fa-question-circle"></i>
+                            </div>
+                            <small>Çözüm Merkezi</small>
+                        </a>
+
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="border">
+                                <div class="row no-gutters">
+                                    <div class="col-12 col-lg-6 p-3 pl-4">
+                                        <div class="media">
+                                            <img src="~/assets/media/img/website/siparis-1.jpg" class="mr-3" style="width: 50px;">
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-3"><strong>Mapicut 113 A3 Kollu Kağıt Kesme Makinesi (giyotin)</strong></h6>
+                                                <p class="mb-3">Satıcı: <a href="#" class="text-info"><strong>Hepsiburada</strong></a></p>
+                                                <p class="h4 text-success mb-3">108,78 TL</p>
+                                                <p><a href="#" class="btn btn-outline-warning btn-sm"><small><i class="fas fa-star-half-alt"></i> Ürünü Değerlendir</small></a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 bg-light p-3">
+                                        <div class="teslimat-bilgisi py-3">
+                                            <div class="teslimat-bilgisi__icon">
+                                                <i class="far fa-calendar-check"></i>
+                                            </div>
+                                            <div class="teslimat-bilgisi__bilgiler">
+                                                <p class="mb-2"><strong>TAYFUN ALTUNOGLU</strong> adlı kişiye teslim edildi</p>
+                                                <p class="text-success">Teslim tarihi <strong>26 Mar Pts 2018, 14:40</strong></p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="kargo-bilgisi">
+                                            <a href="#" class="btn btn-text text-muted"><i class="fas fa-box mr-2"></i> Kargo Takibi</a>
+                                            <a href="#" class="btn btn-text text-muted"><i class="fas fa-sync mr-2"></i>Talep Oluştur</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="siparis-detay-bilgiler">
+                                <h4 class="text-primary">Adres Bilgileri</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3"><strong>Teslimat Adresi</strong></h5>
+                                        <p>
+                                            <small class="text-muted">
+                                                Zuhuratbaba Mh. İncirli Cd. Santral Çıkmazı Sk. Toprak Sit. A Blok 5/1
+                                                Dükkan Zuhuratbaba /
+                                                Bakırköy / İstanbul
+                                            </small>
+                                        </p>
+                                        <small><strong>Cevat Güler</strong></small> - <small><strong>0532 113 56 98</strong></small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mt-3"><strong>Fatura Adresi</strong></h5>
+                                        <p>
+                                            <small class="text-muted">
+                                                Zuhuratbaba Mh. İncirli Cd. Santral Çıkmazı Sk. Toprak Sit. A Blok 5/1
+                                                Dükkan Zuhuratbaba / Bakırköy / İstanbul
+                                            </small>
+                                        </p>
+                                        <small><strong>Cevat Güler</strong></small> - <small><strong>0532 113 56 98</strong></small>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h4 class="mt-3 text-primary">Diğer</h4>
+                                <a href="#" class="d-inline-block mr-4 small">Satış Sözleşmesi</a> <a href="#"
+                                                                                                      class="d-inline-block mr-4 small">İade Koşulları</a>
+                                <hr>
+                                <h4 class="mt-3 text-primary">Ödeme Bilgileri</h4>
+                                <p class="mb-2"><span class="badge badge-dark">8506 34** **** 5162</span> no'lu kredi kartı ile ödendi</p>
+                                <p class="lead">Genel Toplam: <strong>145$</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sipariş Bilgisi Gizli -->
+            </div>
+            <!-- Sipariş Kutusu Sonu -->
+        </div>
+    </div>
+
+</div>
+
+

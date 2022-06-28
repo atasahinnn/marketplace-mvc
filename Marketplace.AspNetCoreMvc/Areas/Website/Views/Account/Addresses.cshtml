@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Addresses";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="col-md-8 col-lg-9 order-1 order-md-2 mb-5">
+    <div class="row mb-3">
+        <div class="col">
+            <ul class="nav nav-pills border-bottom">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Teslimat Adreslerim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Fatura Bilgilerim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="text-muted mb-3">
+                9 teslimat adresiniz bulunmaktadır. Bu sayfadan yeni adres oluşturabilir, mevcut adreslerinizi düzenleyebilir ya da silebilirsiniz. Bu sayfada yapacağınız adres değişiklikleri daha önce vermiş olduğunuz siparişleri etkilemez. Vermiş olduğunuz siparişin adres değişikliğini 'Siparişlerim' alanından gerçekleştirebilirsiniz.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 mb-3">
+            <a class="adres-card-ekle card bg-light h-100 shadow-sm" href="#adresEkleModal" data-fancybox>
+                <div class="card-body">
+                    <h3>Yeni Ekle</h3>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 mb-3">
+            <div class="adres-card card bg-light h-100 shadow-sm" href="#">
+                <div class="card-body">
+                    <h5>İş Adresi</h5>
+                    <p><strong><small>Zuhuratbaba Mh. İncirli Caddesi Santral Çıkmazı Sk. Ap No: 5 D: 6</small></strong></p>
+                    <p><small>Bakırköy, İST.</small></p>
+                    <p><small>0532 700 12 34</small></p>
+                    <a href="#" class="text-right text-primary"><small>Düzenle</small></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

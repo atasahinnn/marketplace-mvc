@@ -1,0 +1,188 @@
+﻿@model PersonalStoreWarehousesDto
+
+<form asp-area="Seller" asp-controller="Account" asp-action="UpdatePersonalStoreWarehouses" method="post">
+    @Html.HiddenFor(x => x.Id)
+    <div class="card p-3 border-secondary mt-5 card-custom">
+        <div class="card-header flex-wrap">
+            <div class="card-title">
+                <h5>@Localizer["DepoBilgileri"]</h5>
+            </div>
+            <div class="card-toolbar">
+                <button type="button" class="btn btn-light-danger btn-sm font-weight-bolder" data-toggle="modal" data-target="#warehouseModal">
+                    <i class="la la-plus"></i>@Localizer["DepoEkle"]
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="col-12 overflow-auto">
+                    <table class="table table-hover table-bordered mt-2" id="warehouseTable">
+                        <thead class="table-active">
+                            <tr>
+                                <th scope="col" class="text-center">@Localizer["AdresBasligi"]</th>
+                                <th scope="col" class="text-center">@Localizer["Ulke"]</th>
+                                <th scope="col" class="text-center">@Localizer["Sehir"]</th>
+                                <th scope="col" class="text-center">@Localizer["Ilce"]</th>
+                                <th scope="col" class="text-center">@Localizer["Adres"]</th>
+                                <th scope="col" class="text-center">@Localizer["Durum"]</th>
+                                <th scope="col" class="text-center">@Localizer["Guncelle"]</th>
+                                <th scope="col" class="text-center">@Localizer["Sil"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Warehouses == null)
+                            {
+                                <tr>
+                                    <td class="text-center"><i class="ki ki-bold-close icon-md text-danger"></i></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="d-flex float-right mt-5">
+                <button type="submit" class="btn btn-primary">
+                    <i class="flaticon-download-1"></i>&nbsp;&nbsp;@Localizer["DepolariKaydet"]
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="modal fade" id="warehouseModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Localizer["DepoAdresim"]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label">@Localizer["AdresBasligi"]</label>
+                    <input type="text" id="NameAddModal" class="form-control" placeholder="@Localizer["BaslikOrnek"]" />
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <select class="form-control" id="CountryIdAddModal" onchange="GetCitiesAddModal(this)">
+                            <option value="">@Localizer["UlkeSeciniz"]</option>
+                            @foreach (var country in ViewBag.Countries)
+                            {
+                                string ctName = null;
+                                for (int i = 0; i < country.CountryNames.Count; i++)
+                                {
+                                    if (i != 0)
+                                    {
+                                        ctName += " - ";
+                                    }
+                                    ctName += country.CountryNames[i].Name;
+                                }
+                                <option value="@country.Id">@ctName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control" id="CityIdAddModal" onchange="GetDistrictsAddModal(this)">
+                            <option value="">@Localizer["IlSeciniz"]</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control" id="DistrictIdAddModal">
+                            <option value="">@Localizer["IlceSeciniz"]</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="AddressAddModal" rows="2" placeholder="@Localizer["DepoAdresiniz"]"></textarea>
+                </div>
+                <div class="form-row float-right">
+                    <div class="form-group mt-2">
+                        <label class="font-weight-bolder h3 text-primary bg-light-primary">@Localizer["AktiflikDurumu"]</label>
+                    </div>
+                    <div class="form-group ml-3">
+                        <span class="switch switch-outline switch-icon switch-success">
+                            <label>
+                                <input type="checkbox" id="ActiveAddModal">
+                                <span></span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">@Localizer["Kapat"]</button>
+                <button type="button" onclick="warehouseAdd()" class="btn btn-primary btn-lg" data-dismiss="modal">@Localizer["Kaydet"]</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--UPDATE-MODAL-->
+<div class="modal fade" id="warehouseUpdateModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@Localizer["DepoAdresiGuncelle"]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label">@Localizer["AdresBasligi"]</label>
+                    <input type="text" id="NameUpdateModal" class="form-control" />
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <select class="form-control" id="CountryIdUpdateModal" onchange="GetCitiesUpdateModal(this)">
+                            <option value="">@Localizer["UlkeSeciniz"]</option>
+                            @foreach (var country in ViewBag.Countries)
+                            {
+                                string ctName = null;
+                                for (int i = 0; i < country.CountryNames.Count; i++)
+                                {
+                                    if (i != 0)
+                                    {
+                                        ctName += " - ";
+                                    }
+                                    ctName += country.CountryNames[i].Name;
+                                }
+                                <option value="@country.Id">@ctName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control" id="CityIdUpdateModal" onchange="GetDistrictsUpdateModal(this)">
+                            <option value="">@Localizer["IlSeciniz"]</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control" id="DistrictIdUpdateModal">
+                            <option value="">@Localizer["IlceSeciniz"]</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="AddressUpdateModal" rows="2"></textarea>
+                </div>
+                <div class="form-row float-right">
+                    <div class="form-group mt-2">
+                        <label class="font-weight-bolder h3 text-primary bg-light-primary">@Localizer["AktiflikDurumu"]</label>
+                    </div>
+                    <div class="form-group ml-3">
+                        <span class="switch switch-outline switch-icon switch-success">
+                            <label>
+                                <input type="checkbox" id="ActiveUpdateModal">
+                                <span></span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">@Localizer["Kapat"]</button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="warehouseUpdate()" data-dismiss="modal">@Localizer["Guncelle"]</button>
+            </div>
+        </div>
+    </div>
+</div>

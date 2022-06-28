@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_RegisterLayout.cshtml";
+}
+<main>
+    <div class="login-register-area pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 ml-auto mr-auto">
+                    <div class="login-register-wrapper">
+                        <div class="login-register-tab-list nav">
+                            <a href="#">
+                                <h4> Giriş Yap </h4>
+                            </a>
+                            <a class="active" href="#">
+                                <h4> Üye Ol </h4>
+                            </a>
+                        </div>
+                        <!-- Form Tablar -->
+                        <div class="tab-content">
+                            <!-- Kayıt form -->
+                            <div id="lg2" class="tab-pane active">
+                                <div class="login-form-container">
+                                    <div class="login-register-form">
+                                        <form action="#" method="post">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <input type="text" class="form-control form-control-lg" placeholder="İsim">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <input type="text" class="form-control form-control-lg" placeholder="Soyisim">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-lg" placeholder="E-Posta adresi">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="tel" class="form-control form-control-lg" placeholder="Telefon Numarası">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-lg" placeholder="Şifre">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-check mb-5">
+                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                    <label class="form-check-label" for="gridCheck">
+                                                        Hüküm ve Koşulları Kabul Ediyorum
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block">Üye Ol</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form Tablar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

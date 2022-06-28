@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html class="no-js" lang="tr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Tradelab | Seller Register</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/assets/css/pages/seller/style.css" />
+    <link rel="stylesheet" href="~/assets/css/pages/seller/footer.css" />
+    <link rel="stylesheet" href="~/assets/css/pages/seller/span.css" />
+    <link href="~/assets/css/global/seller/site.css" rel="stylesheet" />
+    <script src="/assets/js/global/website/modernizr-2.8.3.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="shadow">
+            <div class="container">
+                <a href=@Url.Action("Index", "Home", new { Area = "Website"}) class="text-center d-block py-3">
+                    <img src="~/assets/media/img/seller/tradelab-logo.svg" style="max-height:50px">
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="login-register-area pt-50 pb-100">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+    <footer class="p-5 sticky-footer" style="background: rgb(196, 196, 196);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-3 text-white">
+                    <img src="~/assets/media/img/seller/tradelab-logo.svg" class=" mb-5" style="width: 120px;">
+                </div>
+                <div class="col-12 col-sm-12 col-md-9 pb-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <h5 class="text-primary strong">TRADELAB MÜŞTERİ</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Müşteri Girişi</a></li>
+                                <li><a href="#">Kayıt Ol</a></li>
+                                <li><a href="#">Destek</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <h5 class="text-primary strong">TRADELAB SATICI</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Satıcı Portalına Giriş</a></li>
+                                <li><a href="#">Yardım</a></li>
+                                <li><a href="#">Satıcı Forumları</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <h5 class="text-primary">&nbsp;</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#">SSS</a></li>
+                                <li><a href="#">Tradelab Kaynakları</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <div class="col-12 text-center text-white">
+                <p>© 2020 Tradelab ® All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- JS
+    ============================================ -->
+    <script src="~/assets/js/global/website/jquery-3.5.1.js"></script>
+    <script src="~/assets/js/global/website/bootstrap.bundle.js"></script>
+    <script src="~/assets/js/global/website/plugins.js"></script>
+    <script src="~/assets/js/global/website/main.js"></script>
+    <script src="~/assets/js/global/website/navigation.js"></script>
+    <script src="~/assets/js/global/website/slick.js"></script>
+    <script src="~/assets/js/global/website/jquery.fancybox.js"></script>
+    <script src="~/assets/js/global/website/smooth-scrollbar.js"></script>
+    <script src="~/assets/js/global/website/custom.js"></script>
+
+    <!--SELLER LAYOUTTAN GELENLER-->
+    <script src="~/assets/js/global/seller/plugins.bundle.js"></script>
+    <script src="~/assets/js/global/seller/prismjs.bundle.js"></script>
+    <script src="~/assets/js/global/seller/scripts.bundle.js"></script>
+    <script src="~/assets/js/global/seller/site.js"></script>
+    @RenderSection("JavaScript", false)
+</body>
+</html>
+

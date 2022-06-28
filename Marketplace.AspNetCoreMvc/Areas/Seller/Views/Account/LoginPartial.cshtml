@@ -1,0 +1,30 @@
+﻿@model LoginDto
+
+<div class="login-form-container">
+    <div class="login-register-form">
+        <form asp-area="Seller" asp-controller="Account" asp-action="Login" method="post" id="loginForm">
+            <div class="form-row">
+                <input asp-for="LoginInfo" type="text" class="form-control" placeholder="@Localizer["GirisBilgileri"]">
+                <div class="span-margin">
+                    <span asp-validation-for="LoginInfo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <input asp-for="Password" type="password" placeholder="@Localizer["Sifre"]">
+                <div class="span-margin">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="button-box">
+                <div class="login-toggle-btn">
+                    <input asp-for="RememberMe" type="checkbox">
+                    <label>@Localizer["BeniHatirla"]</label>
+                    <a href="#">@Localizer["SifremiUnuttum"]</a>
+                </div>
+            </div>
+            <div class="form-row">
+                <button type="submit" id="loginBtn" class="btn btn-primary btn-lg btn-block">@Localizer["Giris"]</button>
+            </div>
+        </form>
+    </div>
+</div>

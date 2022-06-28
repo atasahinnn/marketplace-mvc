@@ -1,0 +1,166 @@
+﻿@model CompanyStoreDocumentsDto
+@{
+    ViewData["Title"] = "CompanyDocumentManagement";
+    Layout = "~/Views/Shared/_SellerLayout.cshtml";
+}
+<form asp-route="/Seller/Account/CompanyDocumentManagement" method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.Id)
+    <div class="card p-3 border-secondary">
+        <div class="card-header border-secondary">
+            <h5>@Localizer["SatisKategorisi"]</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var category in ViewBag.StoreCategories.Categories)
+            {
+                <div class="row mt-2">
+                    <label class="label label-lg font-weight-bold label-light-primary label-inline font-size-h5">@category.CategoryNames[0].Name - @category.CategoryNames[1].Name</label>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card p-3 border-secondary mt-5">
+        <div class="card-header border-secondary">
+            <h5>@Localizer["EvrakDurumu"]</h5>
+        </div>
+        <div class="card-body">
+            @{
+                var unapprovedDocuments = 0;
+                @for (int i = 0; i < Model.Documents.Count; i++)
+                {
+                    if (Model.Documents[i].DocumentStatusId == 1 || Model.Documents[i].DocumentStatusId == 4)
+                    {
+                        unapprovedDocuments++;
+                    }
+                }
+                if (unapprovedDocuments > 0)
+                {
+                    <span class="label label-lg font-weight-bold label-light-danger label-inline font-size-h1">@Localizer["YuklenmeyenEvrak"]</span>
+                }
+                else
+                {
+                    <span class="label label-lg font-weight-bold label-light-success label-inline font-size-h1">@Localizer["EvraklarinizOnaylandi"]</span>
+                }
+            }
+
+        </div>
+
+        <div class="card-footer">
+            <p>
+                @Localizer["EvrakFooter"]
+            </p>
+        </div>
+    </div>
+    <div class="card p-3 border-secondary mt-5">
+        <div class="card-header border-secondary">
+            <h5>@Localizer["EvrakYukleme"]</h5>
+        </div>
+        <div class="card-body">
+            <p>@Localizer["SozlesmeInfo"]</p>
+        </div>
+        <div class="card-footer">
+            <h3>
+                @Localizer["GerekliSozlesmeler"]
+            </h3>
+            <div class="col-12 border border-secondary mt-5">
+                <p class="mt-5"><a href="#">@Localizer["MyshantaAnlasma"]</a></p>
+                <p><a href="#">@Localizer["KomisyonAnlasma"]</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="card p-3 border secondary mt-5">
+        <div class="card-header border-secondary">
+            <h5>
+                @Localizer["EvrakListesi"]
+            </h5>
+        </div>
+        <div class="card-body">
+            <div class="overflow-auto">
+                <table class="table table-hover table-bordered mt-2">
+                    <thead class="bg-light-dark">
+                        <tr>
+                            <th scope="col" class="text-center">@Localizer["EvrakAdi"]</th>
+                            <th scope="col" class="text-center">@Localizer["YuklenmeTarihi"]</th>
+                            <th scope="col" class="text-center">@Localizer["Durum"]</th>
+                            <th scope="col" class="text-center">@Localizer["Yorum"]</th>
+                            <th scope="col" class="text-center">@Localizer["Evrak"]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Documents == null)
+                        {
+                            <tr>
+                                <td class="text-center"><i class="ki ki-bold-close icon-md text-danger"></i></td>
+                            </tr>
+                        }
+                        else
+                        {
+                            for (int i = 0; i < Model.Documents.Count; i++)
+                            {
+                                @Html.HiddenFor(x => x.Documents[i].Id);
+                                @Html.HiddenFor(x => x.Documents[i].Path);
+                                <tr>
+                                    <td class="text-center"><a href="@Model.Documents[i].Path">@Model.Documents[i].DocumentNames[1].Name</a></td>
+                                    <td class="text-center">@Model.Documents[i].UploadDate?.ToString("dd/MM/yyyy")</td>
+                                    <td class="text-center">
+
+                                        @foreach (var documentStatus in ViewBag.DocumentStatus)
+                                        {
+                                            string statusName = null;
+                                            if (documentStatus.Id == Model.Documents[i].DocumentStatusId)
+                                            {
+                                                for (int j = 0; j < documentStatus.DocumentStatusNames.Count; j++)
+                                                {
+                                                    if (j != 0)
+                                                    {
+                                                        statusName += " -   ";
+                                                    }
+                                                    statusName += documentStatus.DocumentStatusNames[j].Name;
+                                                }
+                                            }
+                                            @statusName
+                                        }
+                                        &nbsp;&nbsp;
+                                        @switch (Model.Documents[i].DocumentStatusId)
+                                        {
+                                            case 1:<i class="ki ki-close icon-md text-danger"></i>
+                                                break;
+                                            case 2: <i class="ki ki-outline-info icon-md text-warning"></i>
+                                                break;
+                                            case 3: <i class="ki ki-bold-check icon-md text-success"></i>
+                                                break;
+                                            case 4:<i class="ki ki-bold-close icon-md text-danger"></i>
+                                                break;
+                                        }
+                                    </td>
+                                    <td class="text-center" id="descriptionRow">@Model.Documents[i].Description</td>
+
+                                    <td class="text-center">
+                                        @if (Model.Documents[i].DocumentStatusId == 1 || Model.Documents[i].DocumentStatusId == 4)
+                                        {
+                                        <label id="inputLabel" for="Documents[@i].File" class="btn btn-light-danger font-weight-bold mr-2" style="cursor:pointer"><i id="inputIcon" class="ki ki-solid-plus icon-md"></i>@Localizer["Yukle"]</label>
+                                            <input name="Documents[@i].File" id="Documents[@i].File" type="file" accept=".pdf" onchange="getFile(this);" style="display:none" />
+                                        }
+                                        else
+                                        {
+                                    <span class="label label-xl font-weight-bold label-light-success label-inline">@Localizer["Yuklendi"]</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex float-right mt-5">
+                <button type="submit" class="btn btn-primary">
+                    <i class="flaticon-download-1"></i>&nbsp;&nbsp;@Localizer["DokumanlariKaydet"]
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section JavaScript{
+    <script src="~/assets/js/pages/seller/document-management.js"></script>
+}

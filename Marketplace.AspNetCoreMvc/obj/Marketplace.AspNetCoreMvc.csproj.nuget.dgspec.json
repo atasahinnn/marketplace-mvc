@@ -1,0 +1,96 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\aatas\\source\\repos\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\aatas\\source\\repos\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\aatas\\source\\repos\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc.csproj",
+        "projectName": "Marketplace.AspNetCoreMvc",
+        "projectPath": "C:\\Users\\aatas\\source\\repos\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc.csproj",
+        "packagesPath": "C:\\Users\\aatas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aatas\\source\\repos\\Marketplace.AspNetCoreMvc\\Marketplace.AspNetCoreMvc\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\aatas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\aatas\\Documents\\FTPbox\\atasahin@94.73.149.62": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.2.3, )"
+            },
+            "IpGeoLocation.IpGeoLocation": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.15.0, )"
+            },
+            "Marketplace.Business": {
+              "target": "Package",
+              "version": "[1.11.6, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.15.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>6d87f364-31b6-48e4-bc0b-da6b10a6d24d</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\css\global\seller\layout\selectboxit.css" />
+    <Content Remove="wwwroot\assets\css\global\seller\register-layout.css" />
+    <Content Remove="wwwroot\assets\js\pages\seller\checker.js" />
+    <Content Remove="wwwroot\assets\js\pages\seller\get-city.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\Model.SharedResources.ar-LY.resx" />
+    <EmbeddedResource Remove="Resources\Model.SharedResources.en-US.resx" />
+    <EmbeddedResource Remove="Resources\Model.SharedResources.tr-TR.resx" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.2.3" />
+    <PackageReference Include="IpGeoLocation.IpGeoLocation" Version="1.0.5" />
+    <PackageReference Include="MailKit" Version="2.15.0" />
+    <PackageReference Include="Marketplace.Business" Version="1.11.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="MimeKit" Version="2.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logs\Error\" />
+    <Folder Include="Logs\Information\" />
+    <Folder Include="wwwroot\assets\css\plugins\" />
+    <Folder Include="wwwroot\assets\media\update\" />
+    <Folder Include="wwwroot\assets\media\update\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\Model.SharedResources.ar-LY.resx" />
+    <None Include="Resources\Model.SharedResources.en-US.resx" />
+    <None Include="Resources\Model.SharedResources.tr-TR.resx" />
+    <None Include="wwwroot\assets\fonts\admin\keenthemes-icons\Ki.svg" />
+    <None Include="wwwroot\assets\fonts\admin\keenthemes-icons\Ki.woff2" />
+  </ItemGroup>
+
+</Project>
